@@ -1,0 +1,29 @@
+﻿  ChessCharacter.cpp
+  Source.cpp
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(28,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(32,53): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(32,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(35,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(35,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  Generating Code...
+  SMFL_CHESS.vcxproj -> C:\Users\wowfa\source\repos\SMFL_CHESS\x64\Debug\SMFL_CHESS.exe
