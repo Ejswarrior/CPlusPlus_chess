@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="ChessCharacter.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Enums.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChessCharacter.h" />

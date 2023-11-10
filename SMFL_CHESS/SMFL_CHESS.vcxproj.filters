@@ -24,6 +24,9 @@
     <ClCompile Include="ChessCharacter.cpp">
       <Filter>Source Files\ChessPieces</Filter>
     </ClCompile>
+    <ClCompile Include="Enums.h">
+      <Filter>Header Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ChessCharacter.h">

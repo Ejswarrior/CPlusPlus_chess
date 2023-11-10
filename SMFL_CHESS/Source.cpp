@@ -7,6 +7,7 @@
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "My First Window");
 	ChessCharacter chessPiece;
+	std::vector<class ChessCharacter>;
 	window.setFramerateLimit(60);
 	chessPiece.initializeChessPiece();
 	int boardSquareWidth = 1280 / 8;
@@ -14,6 +15,7 @@ int main() {
 	std::vector<sf::RectangleShape> boardSquares;
 	int xPosistion = 0;
 	int yPosistion = 0;
+
 
 	for (int i = 0; i <= 64; ++i) {
 		sf::RectangleShape boardSquare;
@@ -51,10 +53,10 @@ int main() {
 
 			}
 
-			if (event.type == sf::Event::MouseButtonPressed) //Mouse button Pressed
+			if (event.type == sf::Event::MouseButtonPressed)
 			{
-				if (event.mouseButton.button == sf::Mouse::Right) //specifies
-				{
+				if (event.mouseButton.button == sf::Mouse::Left) 
+				{	
 					for (sf::RectangleShape boardSquare : boardSquares) {
 						sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
 							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
@@ -64,7 +66,7 @@ int main() {
 					}
 				}
 			}
-
+		
 		}
 
 			window.clear();
