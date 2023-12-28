@@ -2,11 +2,12 @@
 #include <iostream>
 #include <string>
 #include <vector>
-#include "ChessCharacter.cpp"
+#include "ChessPieceBase.h"
+#include "Pawn.h"
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "My First Window");
-	ChessCharacter chessPiece;
+	ChessPieceBase chessPiece;
 	std::vector<class ChessCharacter>;
 	window.setFramerateLimit(60);
 	chessPiece.initializeChessPiece();
@@ -15,6 +16,8 @@ int main() {
 	std::vector<sf::RectangleShape> boardSquares;
 	int xPosistion = 0;
 	int yPosistion = 0;
+	Pawn pawn;
+	pawn.initializeChessPiece();
 
 
 	for (int i = 0; i <= 64; ++i) {
@@ -61,7 +64,12 @@ int main() {
 						sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
 							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
 								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
-								chessPiece.move(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth/2) - (chessPiece.chessPieceWidth/2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPiece.chessPieceHeight/2)));
+								pawn.distanceOfSquares(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (pawn.chessPieceWidth / 2), 
+									boardSquarePosistion.y + (boardSquareHeight / 2) - (pawn.chessPieceHeight / 2)));
+								if (pawn.canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y))) {
+									std::cout << "Hit Here" << std::endl;
+									pawn.move(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (pawn.chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (pawn.chessPieceHeight / 2)));
+								}
 							}
 					}
 				}
@@ -73,7 +81,7 @@ int main() {
 			for (sf::RectangleShape boardSquare : boardSquares) {
 				window.draw(boardSquare);
 			}
-			window.draw(chessPiece.chessPiece);
+			window.draw(pawn.chessPiece);
 			window.display();
 	}
 

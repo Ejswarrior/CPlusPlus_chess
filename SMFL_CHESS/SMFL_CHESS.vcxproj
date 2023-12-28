@@ -151,12 +151,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ChessCharacter.cpp" />
+    <ClCompile Include="ChessPiecebase.cpp" />
+    <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Enums.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ChessCharacter.h" />
+    <ClInclude Include="ChessPieceBase.h" />
+    <ClInclude Include="Pawn.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
