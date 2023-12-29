@@ -21,31 +21,37 @@ int main() {
 
 
 	for (int i = 0; i <= 64; ++i) {
-		sf::RectangleShape boardSquare;
+		struct {
+			sf::RectangleShape boardSquare;
+			char letterPostition;
+			int numberPosition;
+		} boardSquareStruct;
+
+
 
 		if (i == 0) {
-			boardSquare.setPosition(sf::Vector2f(0, 0));
+			boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, 0));
 		}
 
 		else if (i % 8 == 0) {
 			yPosistion += boardSquareHeight;
 			xPosistion = 0;
-			boardSquare.setPosition(sf::Vector2f(0, yPosistion));
+			boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, yPosistion));
 		}
 		else if(i % 8 > 0)  {
 			xPosistion += boardSquareWidth;
-			boardSquare.setPosition(sf::Vector2f(xPosistion, yPosistion));
+			boardSquareStruct.boardSquare.setPosition(sf::Vector2f(xPosistion, yPosistion));
 		}
 
-		boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
-		if (i % 2  == 0 && yPosistion/boardSquareHeight % 2 == 0) boardSquare.setFillColor(sf::Color::Black);
-		else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquare.setFillColor(sf::Color::White);
-		else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquare.setFillColor(sf::Color::White);
-		else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquare.setFillColor(sf::Color::Black);
+		boardSquareStruct.boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
+		if (i % 2  == 0 && yPosistion/boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(sf::Color::Black);
+		else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
+		else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
+		else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0)boardSquareStruct.boardSquare.setFillColor(sf::Color::Black);
 
-		else  boardSquare.setFillColor(sf::Color::White);
+		else boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
 
-		boardSquares.push_back(boardSquare);
+		boardSquares.push_back(boardSquareStruct.boardSquare);
 	}
 
 	while (window.isOpen()) {
@@ -73,8 +79,7 @@ int main() {
 							}
 					}
 				}
-			}
-		
+			}		
 		}
 
 			window.clear();

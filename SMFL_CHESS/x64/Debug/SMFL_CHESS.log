@@ -1,19 +1,4 @@
-﻿  Pawn.cpp
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(51,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(52,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(54,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(54,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-  Source.cpp
+﻿  Source.cpp
 C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
 C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(51,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
@@ -29,30 +14,29 @@ C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\ChessPieceBase.h(54,23): warni
               T=float
           ]
 C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(11,35): warning C4091: '': ignored on left of 'std::vector<main::ChessCharacter,std::allocator<main::ChessCharacter>>' when no variable is declared
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(33,44): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(39,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(37,53): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(43,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(37,41): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(43,59): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(40,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(46,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(40,36): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\wowfa\source\repos\SMFL_CHESS\SMFL_CHESS\Source.cpp(46,54): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-  Generating Code...
   SMFL_CHESS.vcxproj -> C:\Users\wowfa\source\repos\SMFL_CHESS\x64\Debug\SMFL_CHESS.exe
