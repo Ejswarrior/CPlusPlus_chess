@@ -12,11 +12,9 @@ public:
     bool canMovePosistions(sf::Vector2f newPosistion){
         sf::Vector2f distanceOfSquares = (*this).distanceOfSquares(newPosistion);
 
-        std::cout << distanceOfSquares.y << std::endl;
         int totalMoves = numberOfMoves == 0 ? 2 : 1;
 
         if (distanceOfSquares.y > 0 && distanceOfSquares.y <= totalMoves && distanceOfSquares.x == 0) {
-            std::cout << "Hit this part" << std::endl;
             numberOfMoves++;
             return true;
         }
