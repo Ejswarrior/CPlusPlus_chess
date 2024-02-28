@@ -7,7 +7,8 @@
 class ChessPieceBase
 {
 
-public: 
+public:
+	std::string id;
 	sf::RectangleShape chessPiece;
 	sf::Vector2f startingPosistion = sf::Vector2f(0,0);
 	sf::Vector2f posistion = startingPosistion;
@@ -18,12 +19,14 @@ public:
 	bool isChessPieceActive = true;
 	enum chessPieceTypes chessPieceType;
 	int player = 1;
+	int	numberXPosition;
+	int numberYPosition;
 
-
-	void initializeChessPiece() {
+	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion) {
 		chessPiece.setSize(sf::Vector2f(chessPieceWidth, chessPieceHeight));
 		chessPiece.setFillColor(sf::Color::Red);
-		chessPiece.setPosition(posistion);
+		chessPiece.setPosition(newPosistion);
+		id = newId;
 	}
 
 	void move(sf::Vector2f newPosistion) {

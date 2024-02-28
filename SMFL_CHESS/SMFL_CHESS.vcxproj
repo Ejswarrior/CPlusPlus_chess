@@ -151,8 +151,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Castle.cpp" />
-    <ClCompile Include="ChessPiecebase.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Enums.h" />

@@ -8,6 +8,7 @@ class Pawn :
   
 public:
     int numberOfMoves = 0;
+    std::vector<int> intialBoardSqaure = { 8, 9, 10, 11, 12, 13, 14, 15 };
 
     bool canMovePosistions(sf::Vector2f newPosistion){
         sf::Vector2f distanceOfSquares = (*this).distanceOfSquares(newPosistion);
