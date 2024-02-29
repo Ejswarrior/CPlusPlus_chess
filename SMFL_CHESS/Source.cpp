@@ -27,8 +27,8 @@ int main() {
 	int yPosistion = 0;
 	Pawn pawn;
 	Pawn pawn2;
-	pawn.initializeChessPiece("pawnTest1", sf::Vector2f(0, 0));
-	pawn2.initializeChessPiece("pawnTest2", sf::Vector2f(0, boardSquareHeight));
+	pawn.initializeChessPiece("pawnTest1", sf::Vector2f(0, 0), "images/Chess_plt45.png", 1);
+	pawn2.initializeChessPiece("pawnTest2", sf::Vector2f(0, boardSquareHeight), "images/Chess_plt45.png", 2);
 	int xPosistionCount = 1;
 	int yPoisitionCount = 1;
 	struct selectedChessPieceStruct {
@@ -75,10 +75,10 @@ int main() {
 				boardSquareStruct.boardSquarePosistion = sf::Vector2f(xPosistion, yPosistion);
 			}
 			boardSquareStruct.boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
-			if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(sf::Color::Black);
-			else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
-			else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
-			else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0)boardSquareStruct.boardSquare.setFillColor(sf::Color::Black);
+			if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(sf::Color{ 68,45,14 });
+			else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(sf::Color{229,193,146});
+			else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(sf::Color{ 229,193,146 });
+			else if (i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0)boardSquareStruct.boardSquare.setFillColor(sf::Color{ 68,45,14 });
 
 			else boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
 

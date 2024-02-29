@@ -158,7 +158,10 @@
   <ItemGroup>
     <ClInclude Include="Castle.h" />
     <ClInclude Include="ChessPieceBase.h" />
+    <ClInclude Include="Header.h" />
     <ClInclude Include="Pawn.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="struct_header.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

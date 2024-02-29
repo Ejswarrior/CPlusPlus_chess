@@ -9,23 +9,28 @@ class ChessPieceBase
 
 public:
 	std::string id;
-	sf::RectangleShape chessPiece;
+	sf::Texture texture;
+	sf::Sprite chessPiece;
 	sf::Vector2f startingPosistion = sf::Vector2f(0,0);
 	sf::Vector2f posistion = startingPosistion;
-	float chessPieceHeight = 50;
-	float chessPieceWidth = 100;
+	float chessPieceHeight = 100;
+	float chessPieceWidth = 150;
 	int boardSquareWidth = 1280 / 8;
 	int boardSquareHeight = 720 / 8;
+	int player;
 	bool isChessPieceActive = true;
 	enum chessPieceTypes chessPieceType;
-	int player = 1;
 	int	numberXPosition;
 	int numberYPosition;
 
-	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion) {
-		chessPiece.setSize(sf::Vector2f(chessPieceWidth, chessPieceHeight));
-		chessPiece.setFillColor(sf::Color::Red);
+	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion, std::string assetName, int playerType ) {
+		texture.loadFromFile(assetName);
+		chessPiece.setTexture(texture);
+		chessPiece.setScale(sf::Vector2f(chessPieceWidth/chessPiece.getLocalBounds().width, chessPieceHeight/chessPiece.getLocalBounds().height));
 		chessPiece.setPosition(newPosistion);
+		sf::Vector2f scale = chessPiece.getScale();
+		std::cout << scale.x << std::endl;
+		player = playerType;
 		id = newId;
 	}
 
