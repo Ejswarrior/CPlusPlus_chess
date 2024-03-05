@@ -10,7 +10,7 @@ class ChessPieceBase
 public:
 	std::string id;
 	sf::Texture texture;
-	sf::Sprite chessPiece;
+	sf::Sprite baseChessPiece;
 	sf::Vector2f startingPosistion = sf::Vector2f(0,0);
 	sf::Vector2f posistion = startingPosistion;
 	float chessPieceHeight = 100;
@@ -23,15 +23,15 @@ public:
 	int	numberXPosition;
 	int numberYPosition;
 
-	virtual bool canMovePosistions(const sf::Vector2f newPosistion, const boardSquareStruct boardSquareStruct)  = 0;
+	virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition) { return false; };
 
 
 	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion, std::string assetName, int playerType ) {
 		texture.loadFromFile(assetName);
-		chessPiece.setTexture(texture);
-		chessPiece.setScale(sf::Vector2f(chessPieceWidth/chessPiece.getLocalBounds().width, chessPieceHeight/chessPiece.getLocalBounds().height));
-		chessPiece.setPosition(newPosistion);
-		sf::Vector2f scale = chessPiece.getScale();
+		baseChessPiece.setTexture(texture);
+		baseChessPiece.setScale(sf::Vector2f(chessPieceWidth/ baseChessPiece.getLocalBounds().width, chessPieceHeight/ baseChessPiece.getLocalBounds().height));
+		baseChessPiece.setPosition(newPosistion);
+		sf::Vector2f scale = baseChessPiece.getScale();
 		std::cout << scale.x << std::endl;
 		player = playerType;
 		id = newId;
@@ -39,25 +39,9 @@ public:
 
 	void move(sf::Vector2f newPosistion) {
 		posistion = newPosistion;
-		chessPiece.setPosition(newPosistion);
+		baseChessPiece.setPosition(newPosistion);
 	}
 
-
-	void takeChessPiece(sf::Vector2f currentPosiston, sf::Vector2f newPosistion, std::vector<class ChessPieceBase> chessPieceList) {
-		for (class ChessPieceBase chessPiece : chessPieceList) {
-			if (chessPiece.chessPieceType == king) {
-				std::cout << "You Won" << std::endl;
-			}
-
-			else if (chessPiece.posistion == newPosistion) {
-				chessPiece.isChessPieceActive = false;
-			}
-
-			else if (chessPiece.posistion == currentPosiston) {
-				chessPiece.move(newPosistion);
-			}
-		}
-	}
 
 	sf::Vector2f distanceOfSquares(sf::Vector2f newPosistion) {
 		int distanceY = std::ceil((newPosistion.y - posistion.y) / boardSquareHeight);

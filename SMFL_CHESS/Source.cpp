@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include "struct_header.h"
 #include "ChessPieceBase.h"
 #include "Pawn.h" 
-#include "struct_header.h"
 
 
 std::vector<boardSquareStruct> intializeBoard(int boardSquareHeight, int boardSquareWidth,  ChessPieceBase pawn, ChessPieceBase pawn2, std::vector<boardSquareStruct> boardSquareAttributes) {
@@ -126,8 +126,7 @@ int main() {
 								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight && currentBoardSquareStruct.chessPiece != nullptr) {
 								currentBoardSquareStruct.chessPiece->distanceOfSquares(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (pawn.chessPieceWidth / 2),
 									boardSquarePosistion.y + (boardSquareHeight / 2) - (pawn.chessPieceHeight / 2)));
-								if(currentBoardSquareStruct.chessPiece != nullptr) std::cout << currentBoardSquareStruct.chessPiece->id << std::endl;
-								if (currentBoardSquareStruct.chessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), currentBoardSquareStruct)) {
+								if (currentBoardSquareStruct.chessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion)) {
 									if ( currentBoardSquareStruct.chessPiece->id != currentlySelectedChessPiece.selectedChessPiece.id) {
 										currentBoardSquareStruct.chessPiece->isChessPieceActive = false;
 									}
@@ -141,7 +140,7 @@ int main() {
 										}
 									}
 
-									pawn.move(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (pawn.chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (pawn.chessPieceHeight / 2)));
+									currentBoardSquareStruct.chessPiece->move(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (pawn.chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (pawn.chessPieceHeight / 2)));
 								}
 							}
 						}
@@ -154,8 +153,8 @@ int main() {
 			for (boardSquareStruct boardSquareStruct : boardSquareAttributes) {
 				window.draw(boardSquareStruct.boardSquare);
 			}
-			if(pawn.isChessPieceActive) window.draw(pawn.chessPiece);
-			if(pawn2.isChessPieceActive) window.draw(pawn2.chessPiece);
+			if(pawn.isChessPieceActive) window.draw(pawn.baseChessPiece);
+			if(pawn2.isChessPieceActive) window.draw(pawn2.baseChessPiece);
 			window.display();
 	}
 
