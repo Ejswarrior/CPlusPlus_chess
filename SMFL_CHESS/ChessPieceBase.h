@@ -23,6 +23,9 @@ public:
 	int	numberXPosition;
 	int numberYPosition;
 
+	virtual bool canMovePosistions(const sf::Vector2f newPosistion, const boardSquareStruct boardSquareStruct)  = 0;
+
+
 	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion, std::string assetName, int playerType ) {
 		texture.loadFromFile(assetName);
 		chessPiece.setTexture(texture);
@@ -38,6 +41,7 @@ public:
 		posistion = newPosistion;
 		chessPiece.setPosition(newPosistion);
 	}
+
 
 	void takeChessPiece(sf::Vector2f currentPosiston, sf::Vector2f newPosistion, std::vector<class ChessPieceBase> chessPieceList) {
 		for (class ChessPieceBase chessPiece : chessPieceList) {
