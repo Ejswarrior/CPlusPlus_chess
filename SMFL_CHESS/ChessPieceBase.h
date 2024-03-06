@@ -23,8 +23,11 @@ public:
 	int	numberXPosition;
 	int numberYPosition;
 
-	virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition) { return false; };
+	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition) {
+		std::cout << "hit base" << std::endl;
 
+		return false;
+	};
 
 	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion, std::string assetName, int playerType ) {
 		texture.loadFromFile(assetName);
