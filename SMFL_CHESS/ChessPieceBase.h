@@ -41,6 +41,7 @@ public:
 	}
 
 	void move(sf::Vector2f newPosistion) {
+		std::cout << "hit move" << std::endl;
 		posistion = newPosistion;
 		baseChessPiece.setPosition(newPosistion);
 	}

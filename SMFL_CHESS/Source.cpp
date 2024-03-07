@@ -6,7 +6,9 @@
 #include "ChessPieceBase.h"
 #include "Pawn.h" 
 
-
+void logger(char message) {
+	std::cout << message << std::endl;
+}
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "My First Window");
@@ -27,7 +29,7 @@ int main() {
 	pawn->initializeChessPiece("pawnTest1", sf::Vector2f(0, 0), "images/Chess_plt45.png", 1);
 	pawn2->initializeChessPiece("pawnTest2", sf::Vector2f(boardSquareWidth , boardSquareHeight), "images/Chess_plt45.png", 2);
 	struct selectedChessPieceStruct {
-		ChessPieceBase selectedChessPiece;
+		ChessPieceBase* selectedChessPiece;
 		bool isCurrentlySelected = false;
 	};
 	selectedChessPieceStruct currentlySelectedChessPiece;
@@ -99,14 +101,12 @@ int main() {
 							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
 							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
 								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
-								std::cout << "hit this sections" << std::endl;
 								if (currentBoardSquareStruct.chessPiece != nullptr) {
-									currentlySelectedChessPiece.selectedChessPiece = *currentBoardSquareStruct.chessPiece;
-									std::cout << "hit before true" << std::endl;
+									currentlySelectedChessPiece.selectedChessPiece = currentBoardSquareStruct.chessPiece;
 
 									currentlySelectedChessPiece.isCurrentlySelected = true;
 
-									std::cout << currentlySelectedChessPiece.selectedChessPiece.id << std::endl;
+									std::cout << currentlySelectedChessPiece.selectedChessPiece->id << std::endl;
 								}
 							}
 						}
@@ -115,26 +115,27 @@ int main() {
 						for (boardSquareStruct& currentBoardSquareStruct : boardSquareAttributes) {
 							sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
 							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
+							std::cout << "hit here" << std::endl;
 							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
-								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight && currentBoardSquareStruct.chessPiece != nullptr) {
-								std::cout << "hit before distance" << std::endl;
-								currentBoardSquareStruct.chessPiece->distanceOfSquares(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (currentBoardSquareStruct.chessPiece->chessPieceWidth / 2),
-									boardSquarePosistion.y + (boardSquareHeight / 2) - (currentBoardSquareStruct.chessPiece->chessPieceHeight / 2)));
-								std::cout << boardSquarePosistion.x << std::endl;
-								std::cout << boardSquarePosistion.y << std::endl;
-
-
-								if (currentBoardSquareStruct.chessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion)) {
+								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
+								
+								std::cout << currentBoardSquareStruct.numberXPosition << std::endl;
+								std::cout << currentBoardSquareStruct.numberXPosition << std::endl;
+								if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion)) {
 									std::cout << "hit move" << std::endl;
-									if ( currentBoardSquareStruct.chessPiece->id != currentlySelectedChessPiece.selectedChessPiece.id) {
+									if ( currentBoardSquareStruct.chessPiece->id != currentlySelectedChessPiece.selectedChessPiece->id) {
+
 										currentBoardSquareStruct.chessPiece->isChessPieceActive = false;
 									}
-									currentBoardSquareStruct.chessPiece = &currentlySelectedChessPiece.selectedChessPiece;
+									currentBoardSquareStruct.chessPiece = currentlySelectedChessPiece.selectedChessPiece;
 									currentlySelectedChessPiece.isCurrentlySelected = false;
 									currentBoardSquareStruct.chessPiece->numberXPosition = currentBoardSquareStruct.numberXPosition;
 									currentBoardSquareStruct.chessPiece->numberYPosition = currentBoardSquareStruct.numberYPosistion;
+									std::cout << "hit after revalue" << std::endl;
+
 									for (boardSquareStruct& embeddedBoardSquareStruct : boardSquareAttributes) {
-										if (currentBoardSquareStruct.numberXPosition != embeddedBoardSquareStruct.numberXPosition || currentBoardSquareStruct.numberYPosistion != embeddedBoardSquareStruct.numberYPosistion && embeddedBoardSquareStruct.chessPiece->id == currentBoardSquareStruct.chessPiece->id) {
+										if (currentBoardSquareStruct.numberXPosition != embeddedBoardSquareStruct.numberXPosition || currentBoardSquareStruct.numberYPosistion != embeddedBoardSquareStruct.numberYPosistion && embeddedBoardSquareStruct.chessPiece == currentBoardSquareStruct.chessPiece) {
+											std::cout << "Hit if check" << std::endl;
 											embeddedBoardSquareStruct.chessPiece = nullptr;
 										}
 									}
