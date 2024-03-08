@@ -23,7 +23,7 @@ public:
 	int	numberXPosition;
 	int numberYPosition;
 
-	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition) {
+	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) {
 		std::cout << "hit base" << std::endl;
 
 		return false;

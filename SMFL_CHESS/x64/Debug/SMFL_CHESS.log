@@ -26,11 +26,11 @@ C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(54,23): warnin
   (compiling source file 'Source.cpp')
   
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(15,35): warning C4091: '': ignored on left of 'std::vector<main::ChessCharacter,std::allocator<main::ChessCharacter>>' when no variable is declared
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,75): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,75): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,75): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,75): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,75): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,93): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,93): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,93): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,93): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,93): warning C4244:         ]
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,56): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,56): warning C4244:         with
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(30,56): warning C4244:         [
@@ -46,34 +46,34 @@ C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(60,62): warning C424
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(60,62): warning C4244:         [
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(60,62): warning C4244:             T=float
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(60,62): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,72): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,72): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,72): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,72): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,60): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,60): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,60): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,60): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(69,60): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,71): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,71): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,71): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,71): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,59): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,59): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,59): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,59): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(70,59): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,73): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,73): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,73): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,73): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,55): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,55): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,55): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,55): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,55): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,72): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,72): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,72): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,72): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,60): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,60): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,60): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,60): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(71,60): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,71): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,71): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,71): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,71): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,59): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,59): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,59): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,59): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(72,59): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,73): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,73): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,73): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,73): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,73): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,55): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,55): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,55): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,55): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(74,55): warning C4244:         ]
   SMFL_CHESS.vcxproj -> C:\Users\Erik\source\repos\SMLF_CHESS\x64\Debug\SMFL_CHESS.exe
