@@ -10,4 +10,5 @@ struct boardSquareStruct {
 	int numberYPosistion;
 	sf::Vector2f boardSquarePosistion;
 	ChessPieceBase* chessPiece = nullptr;
+	std::string chessPieceId;
 };

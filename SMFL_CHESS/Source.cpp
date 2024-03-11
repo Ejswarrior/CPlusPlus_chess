@@ -21,7 +21,8 @@ int main() {
 	bool initialized = false;
 	int xPosistion = 0;
 	int yPosistion = 0;
-
+	float chessPieceHeight = 100;
+	float chessPieceWidth = 150;
 	int xPosistionCount = 1;
 	int yPoisitionCount = 1;
 	ChessPieceBase* pawn = new Pawn();
@@ -47,6 +48,7 @@ int main() {
 				pawn->numberXPosition = 1;
 				pawn->numberYPosition = 1;
 				boardSquareStruct.chessPiece = pawn;
+				boardSquareStruct.chessPieceId = pawn->id;
 			}
 
 			else if (i % 8 == 0) {
@@ -61,9 +63,12 @@ int main() {
 			}
 
 			else {
-				if (i == 57) boardSquareStruct.chessPiece = pawn2;
-				pawn2->numberYPosition = 8;
-				pawn2->numberXPosition = 2;
+				if (i == 57) {
+					boardSquareStruct.chessPiece = pawn2;
+					boardSquareStruct.chessPieceId = pawn2->id;
+					pawn2->numberYPosition = 8;
+					pawn2->numberXPosition = 2;
+				}
 				boardSquareStruct.numberXPosition = xPosistionCount + 1;
 				xPosistionCount += 1;
 				xPosistion += boardSquareWidth;
@@ -98,17 +103,20 @@ int main() {
 				{
 
 					if (!currentlySelectedChessPiece.isCurrentlySelected) {
+
 						for (boardSquareStruct& currentBoardSquareStruct : boardSquareAttributes) {
 							sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
 							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
 							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
 								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
+								std::cout << "hit click " << std::endl;
 								if (currentBoardSquareStruct.chessPiece != nullptr) {
+									std::cout << currentBoardSquareStruct.numberXPosition << std::endl;
+									std::cout << currentBoardSquareStruct.numberYPosistion << std::endl;
 									currentlySelectedChessPiece.selectedChessPiece = currentBoardSquareStruct.chessPiece;
 
 									currentlySelectedChessPiece.isCurrentlySelected = true;
 
-									std::cout << currentlySelectedChessPiece.selectedChessPiece->id << std::endl;
 								}
 							}
 						}
@@ -120,8 +128,7 @@ int main() {
 							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
 								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
 								if (currentBoardSquareStruct.chessPiece != nullptr) std::cout << currentBoardSquareStruct.chessPiece->id;
-								std::cout << currentBoardSquareStruct.numberXPosition << std::endl;
-								std::cout << currentBoardSquareStruct.numberYPosistion << std::endl;
+		
 								if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, 1)) {
 									//if (currentBoardSquareStruct.chessPiece != nullptr && currentlySelectedChessPiece.selectedChessPiece->player == currentBoardSquareStruct.chessPiece->player) continue;
 									if (currentBoardSquareStruct.chessPiece != nullptr) std::cout << currentBoardSquareStruct.chessPiece->id;
@@ -130,24 +137,33 @@ int main() {
 										currentBoardSquareStruct.chessPiece->isChessPieceActive = false;
 									}
 									currentBoardSquareStruct.chessPiece = currentlySelectedChessPiece.selectedChessPiece;
-									currentlySelectedChessPiece.isCurrentlySelected = false;
 									currentBoardSquareStruct.chessPiece->numberXPosition = currentBoardSquareStruct.numberXPosition;
 									currentBoardSquareStruct.chessPiece->numberYPosition = currentBoardSquareStruct.numberYPosistion;
+									currentBoardSquareStruct.chessPieceId = currentBoardSquareStruct.chessPiece->id;
+
+
 
 									for (boardSquareStruct& embeddedBoardSquareStruct : boardSquareAttributes) {
-										if (currentBoardSquareStruct.chessPiece != nullptr && currentBoardSquareStruct.numberXPosition == embeddedBoardSquareStruct.numberXPosition && currentBoardSquareStruct.numberYPosistion == embeddedBoardSquareStruct.numberYPosistion) {
+										if (embeddedBoardSquareStruct.chessPiece != nullptr && currentBoardSquareStruct.numberXPosition != embeddedBoardSquareStruct.numberXPosition && currentBoardSquareStruct.numberYPosistion != embeddedBoardSquareStruct.numberYPosistion && embeddedBoardSquareStruct.chessPieceId == currentBoardSquareStruct.chessPieceId) {
+											std::cout << embeddedBoardSquareStruct.numberXPosition << std::endl;
+											std::cout << embeddedBoardSquareStruct.numberYPosistion << std::endl;
 											embeddedBoardSquareStruct.chessPiece = nullptr;
+											embeddedBoardSquareStruct.chessPieceId = "";
 										}
 									}
 
 
 
-									currentBoardSquareStruct.chessPiece->move(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (currentBoardSquareStruct.chessPiece->chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (currentBoardSquareStruct.chessPiece->chessPieceHeight / 2)));
+									currentlySelectedChessPiece.selectedChessPiece->move(sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2)));
+									currentlySelectedChessPiece.isCurrentlySelected = false;
+									currentlySelectedChessPiece.selectedChessPiece = nullptr;
+
 								}
 
 								else {
-									currentlySelectedChessPiece.selectedChessPiece = nullptr;
 									currentlySelectedChessPiece.isCurrentlySelected = false;
+									currentlySelectedChessPiece.selectedChessPiece = nullptr;
+
 								}
 							}
 						}
