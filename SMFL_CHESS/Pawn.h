@@ -11,12 +11,12 @@ class Pawn :
 public:
     int numberOfMoves = 0;
      bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) override {
-         std::cout << (*this).player << std::endl;
-         std::cout << playerType << std::endl;
+         std::cout << (*this).numberYPosition << std::endl;
+         std::cout << numberYPosition << std::endl;
         int totalMoves = numberOfMoves == 0 ? 2 : 1;
         if ((*this).player == 1) 
         {
-            if (numberYPosition <= (*this).numberYPosition + totalMoves && numberXPosition == (*this).numberXPosition || playerType != (*this).player && numberXPosition == (*this).numberXPosition + 1) {
+            if ((*this).numberYPosition < numberYPosition && numberYPosition <= (*this).numberYPosition + totalMoves && numberXPosition == (*this).numberXPosition || playerType != (*this).player && numberXPosition == (*this).numberXPosition + 1) {
                 numberOfMoves == 0 && numberOfMoves++;
                 return true;
             }
@@ -25,7 +25,7 @@ public:
 
         else if ((*this).player == 2) 
         {
-            if (numberYPosition >= (*this).numberYPosition - totalMoves && numberXPosition == (*this).numberXPosition || playerType != (*this).player && numberXPosition == (*this).numberXPosition + 1 || numberXPosition == (*this).numberXPosition - 1) {
+            if ((*this).numberYPosition > numberYPosition && numberYPosition >= (*this).numberYPosition - totalMoves && numberXPosition == (*this).numberXPosition || playerType != (*this).player && numberXPosition == (*this).numberXPosition + 1 || numberXPosition == (*this).numberXPosition - 1) {
                 numberOfMoves == 0 && numberOfMoves++;
                 return true;
             }

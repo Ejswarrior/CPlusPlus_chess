@@ -19,9 +19,9 @@ public:
 	int boardSquareHeight = 720 / 8;
 	int player;
 	bool isChessPieceActive = true;
-	enum chessPieceTypes chessPieceType;
 	int	numberXPosition;
 	int numberYPosition;
+	std::string chessPieceType;
 
 	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) {
 		std::cout << "hit base" << std::endl;
@@ -29,7 +29,7 @@ public:
 		return false;
 	};
 
-	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion, std::string assetName, int playerType ) {
+	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion, std::string assetName, int playerType, std::string chessType ) {
 		texture.loadFromFile(assetName);
 		baseChessPiece.setTexture(texture);
 		baseChessPiece.setScale(sf::Vector2f(chessPieceWidth/ baseChessPiece.getLocalBounds().width, chessPieceHeight/ baseChessPiece.getLocalBounds().height));
@@ -38,11 +38,20 @@ public:
 		std::cout << scale.x << std::endl;
 		player = playerType;
 		id = newId;
+		chessPieceType = chessType;
 	}
 
-	void move(sf::Vector2f newPosistion) {
-		std::cout << "hit move" << std::endl;
+	void move(sf::Vector2f newPosistion, sf::Vector2f gridPositions, bool didReachEnd) {
 		posistion = newPosistion;
+
+
+		if (chessPieceType == "Pawn") {
+			//TODO: Need to create UI to promote pawn to another chess piece
+			if (player == 1 && gridPositions.y == 8  || player == 2 && gridPositions.y == 1 ) {
+				std::cout << "Pawn has reached end" << std::endl;
+			}
+		}
+
 		baseChessPiece.setPosition(newPosistion);
 	}
 

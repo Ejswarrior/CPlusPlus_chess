@@ -151,12 +151,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Rook.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Enums.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Castle.h" />
+    <ClInclude Include="Rook.h" />
     <ClInclude Include="ChessPieceBase.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Pawn.h" />

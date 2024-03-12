@@ -12,3 +12,10 @@ struct boardSquareStruct {
 	ChessPieceBase* chessPiece = nullptr;
 	std::string chessPieceId;
 };
+
+struct selectedChessPieceStruct {
+	ChessPieceBase* selectedChessPiece;
+	bool isCurrentlySelected = false;
+	sf::Vector2f selectedIndex;
+	bool canDeleteSelected = false;
+};
