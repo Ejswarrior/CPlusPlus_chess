@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="Knight.cpp" />
+    <ClCompile Include="Queen.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Source.cpp" />
@@ -161,6 +162,7 @@
   <ItemGroup>
     <ClInclude Include="Bishop.h" />
     <ClInclude Include="Knight.h" />
+    <ClInclude Include="Queen.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="ChessPieceBase.h" />
     <ClInclude Include="Header.h" />
