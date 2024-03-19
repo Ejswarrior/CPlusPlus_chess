@@ -3,6 +3,7 @@
 #include <vector>
 #include "Enums.h";
 #include <iostream>
+#include "struct_header.h"
 
 class ChessPieceBase
 {
@@ -23,7 +24,7 @@ public:
 	int numberYPosition;
 	std::string chessPieceType;
 
-	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) {
+	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct>* boardSquareAttributes) {
 		std::cout << "hit base" << std::endl;
 
 		return false;

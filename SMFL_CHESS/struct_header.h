@@ -15,6 +15,11 @@ struct boardSquareStruct {
 	std::string chessPieceId;
 };
 
+struct playerHasWonStruct {
+	bool isKingTaken = false;
+	int* whichPlayerWon = nullptr;
+};
+
 struct selectedChessPieceStruct {
 	ChessPieceBase* selectedChessPiece;
 	bool isCurrentlySelected = false;

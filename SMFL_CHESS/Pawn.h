@@ -10,7 +10,7 @@ class Pawn :
   
 public:
     int numberOfMoves = 0;
-     bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) override {
+     bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct>* boardSquareAttributes) override {
          std::cout << (*this).numberYPosition << std::endl;
          std::cout << numberYPosition << std::endl;
         int totalMoves = numberOfMoves == 0 ? 2 : 1;
