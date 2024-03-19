@@ -377,11 +377,30 @@ C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C42
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244:         [
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244:             T=float
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(264,59): error C2664: 'bool ChessPieceBase::canMovePosistions(sf::Vector2f,int,int,int,std::vector &)': cannot convert argument 5 from 'std::vector<boardSquareStruct,std::allocator<boardSquareStruct>>' to 'std::vector &'
+  Enums.h
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(264,59): error C2664: 'bool ChessPieceBase::canMovePosistions(sf::Vector2f,int,int,int,std::vector)': cannot convert argument 5 from 'std::vector<boardSquareStruct,std::allocator<boardSquareStruct>> *' to 'std::vector'
+  C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
+  'std::vector<_Ty,_Alloc>::vector(std::initializer_list<_Elem>,const _Alloc &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+  	C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
+  	Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+  	C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
+  	Conversion requires a second user-defined-conversion operator or constructor
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(654,5):
+  	could be 'std::vector<_Ty,_Alloc>::vector(std::initializer_list<_Elem>,const _Alloc &)'
+  		C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
+  		'std::vector<_Ty,_Alloc>::vector(std::initializer_list<_Elem>,const _Alloc &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
+  			C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
+  			Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
+  			C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
+  			Conversion requires a second user-defined-conversion operator or constructor
+  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(627,5):
+  	or       'std::vector<_Ty,_Alloc>::vector(_Iter,_Iter,const _Alloc &)'
+  	C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
+  	while trying to match the argument list '(std::vector<boardSquareStruct,std::allocator<boardSquareStruct>> *)'
   C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(27,17):
   see declaration of 'ChessPieceBase::canMovePosistions'
   C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(264,59):
-  while trying to match the argument list '(sf::Vector2f, int, int, int, std::vector<boardSquareStruct,std::allocator<boardSquareStruct>>)'
+  while trying to match the argument list '(sf::Vector2f, int, int, int, std::vector<boardSquareStruct,std::allocator<boardSquareStruct>> *)'
   
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,159): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,159): warning C4244:         with
@@ -393,6 +412,5 @@ C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244:         [
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244:             T=float
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244:         ]
-  Enums.h
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
   Generating Code...

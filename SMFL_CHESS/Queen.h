@@ -7,7 +7,7 @@ class Queen :
 {
 public: 
 
-    bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct>* boardSquareAttributes) override {
+    bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct> boardSquareAttributes) override {
 
         int xDifference = numberXPosition - (*this).numberXPosition;
         int yDifference = numberYPosition - (*this).numberYPosition;

@@ -9,7 +9,7 @@ class Rook :
 {
 
 public:
-    bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct>* boardSquareAttributes) override {
+    bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct> boardSquareAttributes) override {
         std::cout << (*this).numberYPosition << std::endl;
         std::cout << numberYPosition << std::endl;
 
