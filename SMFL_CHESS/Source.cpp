@@ -22,7 +22,6 @@ void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPie
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1280, 720), "My First Window");
-	std::vector<class ChessCharacter>;
 	window.setFramerateLimit(60);
 	const int boardSquareWidth = 1280 / 8;
 	const int boardSquareHeight =  720 / 8;
@@ -218,7 +217,6 @@ int main() {
 			boardSquareAttributes.push_back(boardSquareStruct);
 		}
 	}
-
 	initialized = true;
 
 	while (window.isOpen()) {
@@ -242,6 +240,7 @@ int main() {
 					
 								if (currentBoardSquareStruct.chessPiece != nullptr) {
 									logger("found chess piece");
+									currentBoardSquareStruct.chessPiece->boardSquareAttributes.assign();
 									currentlySelectedChessPiece.selectedDefaultColor = currentBoardSquareStruct.boardSquare.getFillColor();
 									if(currentBoardSquareStruct.boardSquare.getFillColor() != sf::Color{ 224,212,116 }) currentBoardSquareStruct.boardSquare.setFillColor(sf::Color{ 224,212,116 });
 									currentlySelectedChessPiece.selectedChessPiece = currentBoardSquareStruct.chessPiece;
@@ -262,7 +261,7 @@ int main() {
 								
 								//Check if we can move from the Chess Piece derived class
 								if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), 
-									currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, 1, boardSquareAttributes)) {
+									currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, 1)) {
 									//Check if we try to take our own chess piece
 									if (currentBoardSquareStruct.chessPiece != nullptr && currentlySelectedChessPiece.selectedChessPiece->player == currentBoardSquareStruct.chessPiece->player) {
 										currentlySelectedChessPiece.selectedChessPiece = nullptr;
@@ -274,7 +273,7 @@ int main() {
 									if (currentBoardSquareStruct.chessPiece != nullptr &&  currentBoardSquareStruct.chessPiece != currentlySelectedChessPiece.selectedChessPiece && currentlySelectedChessPiece.selectedChessPiece->player != currentBoardSquareStruct.chessPiece->player) {
 										if (currentBoardSquareStruct.chessPiece->chessPieceType == "king") {
 											hasAPlayerWon.isKingTaken = true;
-											hasAPlayerWon.whichPlayerWon = &currentlySelectedChessPiece.selectedChessPiece->player;
+											hasAPlayerWon.whichPlayerWon = currentlySelectedChessPiece.selectedChessPiece->player;
 											break;
 										}
 										currentBoardSquareStruct.chessPiece->isChessPieceActive = false;

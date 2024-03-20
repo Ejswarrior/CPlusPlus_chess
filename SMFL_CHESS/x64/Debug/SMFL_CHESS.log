@@ -1,416 +1,199 @@
 ﻿  Bishop.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(70,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Bishop.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(71,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Bishop.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         ]
   (compiling source file 'Bishop.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,38): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,36): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(61,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(62,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         ]
-  (compiling source file 'Bishop.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         ]
   (compiling source file 'Bishop.cpp')
   
   King.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(70,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'King.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(71,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'King.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         ]
   (compiling source file 'King.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,38): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,36): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(61,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(62,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         ]
-  (compiling source file 'King.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         ]
   (compiling source file 'King.cpp')
   
   Knight.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(70,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Knight.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(71,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Knight.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         ]
   (compiling source file 'Knight.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,38): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,36): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(61,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(62,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         ]
-  (compiling source file 'Knight.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         ]
   (compiling source file 'Knight.cpp')
   
   Queen.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(70,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Queen.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(71,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Queen.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         ]
   (compiling source file 'Queen.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,38): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,36): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(61,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(62,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         ]
-  (compiling source file 'Queen.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         ]
   (compiling source file 'Queen.cpp')
   
   Rook.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(70,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Rook.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(71,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Rook.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         ]
   (compiling source file 'Rook.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         ]
   (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,38): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,36): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(61,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(62,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         ]
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         ]
-  (compiling source file 'Rook.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Rook.h(20,47): error C2039: 'chessPiece': is not a member of 'boardSquareStruct'
-  (compiling source file 'Rook.cpp')
-  C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(9,8):
-  see declaration of 'boardSquareStruct'
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Rook.h(20,21): error C2672: 'logger': no matching overloaded function found
-  (compiling source file 'Rook.cpp')
-  C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(32,6):
-  could be 'void logger(T)'
   
   Pawn.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(70,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Pawn.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(71,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Pawn.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C2143: syntax error: missing ';' before '*'
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         ]
   (compiling source file 'Pawn.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(14,38): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C2143: syntax error: missing ';' before '*'
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,16): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\struct_header.h(24,36): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(61,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(62,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         ]
-  (compiling source file 'Pawn.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         ]
   (compiling source file 'Pawn.cpp')
   
   Source.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(4,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(70,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Source.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(71,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
   (compiling source file 'Source.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(27,132): error C2065: 'boardSquareStruct': undeclared identifier
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,34): warning C4244:         ]
   (compiling source file 'Source.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(27,125): error C2923: 'std::vector': 'boardSquareStruct' is not a valid template type argument for parameter '_Ty'
-  (compiling source file 'Source.cpp')
-  C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(27,132):
-  see declaration of 'boardSquareStruct'
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(27,125): error C2976: 'std::vector': too few template arguments
-  (compiling source file 'Source.cpp')
-  C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(436,7):
-  see declaration of 'std::vector'
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(61,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(73,23): warning C4244:         ]
   (compiling source file 'Source.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(62,17): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,34): warning C4244:         ]
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(64,23): warning C4244:         ]
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Pawn.h(13,11): error C3668: 'Pawn::canMovePosistions': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Rook.h(12,10): error C3668: 'Rook::canMovePosistions': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Bishop.h(10,14): error C3668: 'Bishop::canMovePosistions': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Knight.h(10,14): error C3668: 'Knight::canMovePosistions': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Queen.h(10,10): error C3668: 'Queen::canMovePosistions': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\King.h(9,10): error C3668: 'King::canMovePosistions': method with override specifier 'override' did not override any base class methods
-  (compiling source file 'Source.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(25,35): warning C4091: '': ignored on left of 'std::vector<main::ChessCharacter,std::allocator<main::ChessCharacter>>' when no variable is declared
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,63): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,63): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,63): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,63): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(133,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(133,62): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(133,62): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(133,62): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(133,62): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,72): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,72): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,72): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,72): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,60): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,60): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,60): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,60): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,60): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,71): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,71): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,71): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,71): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,59): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,59): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,59): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,59): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(210,59): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,133): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,133): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,133): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,133): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,133): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(249,91): warning C4244:         ]
-  Enums.h
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(264,59): error C2664: 'bool ChessPieceBase::canMovePosistions(sf::Vector2f,int,int,int,std::vector)': cannot convert argument 5 from 'std::vector<boardSquareStruct,std::allocator<boardSquareStruct>> *' to 'std::vector'
-  C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
-  'std::vector<_Ty,_Alloc>::vector(std::initializer_list<_Elem>,const _Alloc &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
-  	C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
-  	Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
-  	C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
-  	Conversion requires a second user-defined-conversion operator or constructor
-  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(654,5):
-  	could be 'std::vector<_Ty,_Alloc>::vector(std::initializer_list<_Elem>,const _Alloc &)'
-  		C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
-  		'std::vector<_Ty,_Alloc>::vector(std::initializer_list<_Elem>,const _Alloc &)': cannot convert 'this' pointer from 'std::vector' to 'std::vector<_Ty,_Alloc> &'
-  			C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
-  			Reason: cannot convert from 'std::vector' to 'std::vector<_Ty,_Alloc>'
-  			C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
-  			Conversion requires a second user-defined-conversion operator or constructor
-  	C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.39.33519\include\vector(627,5):
-  	or       'std::vector<_Ty,_Alloc>::vector(_Iter,_Iter,const _Alloc &)'
-  	C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(265,98):
-  	while trying to match the argument list '(std::vector<boardSquareStruct,std::allocator<boardSquareStruct>> *)'
-  C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceBase.h(27,17):
-  see declaration of 'ChessPieceBase::canMovePosistions'
-  C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(264,59):
-  while trying to match the argument list '(sf::Vector2f, int, int, int, std::vector<boardSquareStruct,std::allocator<boardSquareStruct>> *)'
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,159): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,159): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,159): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,159): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,159): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244:         with
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244:         [
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244:             T=float
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(290,117): warning C4244:         ]
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Enums.h(1,96): warning C4091: 'extern ': ignored on left of 'ChessPieceTypes' when no variable is declared
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(131,63): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(131,63): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(131,63): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(131,63): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(131,63): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,62): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,62): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,62): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,62): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(132,62): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,72): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,72): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,72): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,72): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,72): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,60): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,60): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,60): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,60): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(208,60): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,71): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,71): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,71): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,71): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,71): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,59): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,59): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,59): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,59): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(209,59): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,133): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,133): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,133): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,133): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,133): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,91): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,91): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,91): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,91): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(247,91): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,159): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,159): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,159): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,159): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,159): warning C4244:         ]
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,117): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,117): warning C4244:         with
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,117): warning C4244:         [
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,117): warning C4244:             T=float
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp(289,117): warning C4244:         ]
   Generating Code...
+  SMFL_CHESS.vcxproj -> C:\Users\Erik\source\repos\SMLF_CHESS\x64\Debug\SMFL_CHESS.exe

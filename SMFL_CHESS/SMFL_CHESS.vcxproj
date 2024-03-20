@@ -158,7 +158,6 @@
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Enums.h" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bishop.h" />

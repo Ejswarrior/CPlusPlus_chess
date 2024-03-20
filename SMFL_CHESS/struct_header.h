@@ -17,11 +17,11 @@ struct boardSquareStruct {
 
 struct playerHasWonStruct {
 	bool isKingTaken = false;
-	int* whichPlayerWon = nullptr;
+	int whichPlayerWon = 0;
 };
 
 struct selectedChessPieceStruct {
-	ChessPieceBase* selectedChessPiece;
+	ChessPieceBase* selectedChessPiece = nullptr;
 	bool isCurrentlySelected = false;
 	sf::Vector2f selectedIndex;
 	bool canDeleteSelected = false;
