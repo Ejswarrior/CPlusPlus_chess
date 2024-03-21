@@ -240,7 +240,6 @@ int main() {
 					
 								if (currentBoardSquareStruct.chessPiece != nullptr) {
 									logger("found chess piece");
-									currentBoardSquareStruct.chessPiece->boardSquareAttributes.assign();
 									currentlySelectedChessPiece.selectedDefaultColor = currentBoardSquareStruct.boardSquare.getFillColor();
 									if(currentBoardSquareStruct.boardSquare.getFillColor() != sf::Color{ 224,212,116 }) currentBoardSquareStruct.boardSquare.setFillColor(sf::Color{ 224,212,116 });
 									currentlySelectedChessPiece.selectedChessPiece = currentBoardSquareStruct.chessPiece;
@@ -258,6 +257,15 @@ int main() {
 							//Check for mouse position compared to boardSquare
 							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
 								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
+
+								bool inBetweenPiece = false;
+								for (int i = 0; i < 64; ++i) {
+									boardSquareStruct& inBetweenSquare = boardSquareAttributes.at(i);
+							
+									if (inBetweenSquare.chessPiece != nullptr && inBetweenSquare.numberXPosition == currentBoardSquareStruct.numberXPosition && inBetweenSquare.numberXPosition == currentlySelectedChessPiece.selectedChessPiece->numberXPosition &&  inBetweenSquare.numberYPosistion > currentlySelectedChessPiece.selectedChessPiece->numberYPosition  && inBetweenSquare.numberYPosistion < currentBoardSquareStruct.numberYPosistion) {
+										inBetweenPiece = true;
+									}
+								}
 								
 								//Check if we can move from the Chess Piece derived class
 								if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), 

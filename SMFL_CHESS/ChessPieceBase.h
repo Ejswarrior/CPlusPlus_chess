@@ -6,14 +6,6 @@
 class ChessPieceBase
 {
 
-	struct boardSquareStruct {
-		sf::RectangleShape boardSquare;
-		int numberXPosition;
-		int numberYPosistion;
-		sf::Vector2f boardSquarePosistion;
-		(ChessPieceBase)* chessPiece = nullptr;
-	};
-
 public:
 	std::string id;
 	sf::Texture texture;
@@ -30,7 +22,6 @@ public:
 	int numberYPosition;
 	std::string chessPieceType;
 	std::string chessPieceId;
-	std::vector<boardSquareStruct> boardSquareAttributes;
 	
 	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) {
 		std::cout << "hit base" << std::endl;

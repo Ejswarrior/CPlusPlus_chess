@@ -13,14 +13,6 @@ public:
         std::cout << (*this).numberYPosition << std::endl;
         std::cout << numberYPosition << std::endl;
 
-    /*    if (numberXPosition != (*this).numberXPosition && numberYPosition == (*this).numberYPosition) {
-            for (int i = 0; i < 64; ++i) {
-                boardSquareStruct& currentBoardSquare = (*this).boardSquareAttributes.at(i);
-                if (currentBoardSquare.numberXPosition < numberXPosition && currentBoardSquare.numberXPosition >(*this).numberXPosition) {
-                    logger(currentBoardSquare.chessPiece->id);
-                }
-            }
-        }*/
 
         if (numberXPosition != (*this).numberXPosition && numberYPosition == (*this).numberYPosition || numberYPosition != (*this).numberYPosition && numberXPosition == (*this).numberXPosition)
             return true;
