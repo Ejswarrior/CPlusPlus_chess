@@ -7,8 +7,20 @@ class ChessPieceBase;
 class Pawn :
      public ChessPieceBase
 {
-  
+ 
+   
 public:
+    Pawn(std::string id,
+        sf::Vector2f startingPosistion,
+        std::string assetName,
+        int player,
+        std::string chessPieceType) {
+        (*this).id = id;
+        (*this).startingPosistion = startingPosistion;
+        (*this).assetName = assetName;
+        (*this).player = player;
+        (*this).chessPieceType = chessPieceType;
+    }
     int numberOfMoves = 0;
      bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) override {
          std::cout << (*this).numberYPosition << std::endl;

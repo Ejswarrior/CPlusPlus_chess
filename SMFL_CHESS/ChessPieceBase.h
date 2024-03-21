@@ -5,23 +5,39 @@
 
 class ChessPieceBase
 {
+private: 
+	
 
 public:
-	std::string id;
+	std::string id = "";
+	sf::Vector2f startingPosistion = sf::Vector2f(0, 0);
+	std::string assetName = "";
+	int player = 1;
+	std::string chessPieceType = "";
+
+	ChessPieceBase(std::string id = "",
+		sf::Vector2f startingPosistion = sf::Vector2f(0, 0),
+		std::string assetName = "",
+		int player = 1,
+		std::string chessPieceType = "Pawn") {
+		id = id;
+		startingPosistion = startingPosistion;
+		assetName = assetName;
+		player = player;
+		chessPieceType = chessPieceType;
+	}
+	
+	sf::Vector2f posistion = startingPosistion;
 	sf::Texture texture;
 	sf::Sprite baseChessPiece;
-	sf::Vector2f startingPosistion = sf::Vector2f(0,0);
-	sf::Vector2f posistion = startingPosistion;
+
 	float chessPieceHeight = 100;
 	float chessPieceWidth = 150;
 	int boardSquareWidth = 1280 / 8;
 	int boardSquareHeight = 720 / 8;
-	int player;
 	bool isChessPieceActive = true;
-	int	numberXPosition;
-	int numberYPosition;
-	std::string chessPieceType;
-	std::string chessPieceId;
+	int	numberXPosition = 0;
+	int numberYPosition = 0;
 	
 	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) {
 		std::cout << "hit base" << std::endl;
