@@ -6,14 +6,6 @@
 
 // Used for global values like structs templates and for now some global functions
 
-struct boardSquareStruct {
-	sf::RectangleShape boardSquare;
-	int numberXPosition;
-	int numberYPosistion;
-	sf::Vector2f boardSquarePosistion;
-	std::string chessPieceId;
-};
-
 struct playerHasWonStruct {
 	bool isKingTaken = false;
 	int whichPlayerWon = 0;

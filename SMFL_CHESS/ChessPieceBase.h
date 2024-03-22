@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include <vector>
 #include <iostream>
+#include "BoardSquareStruct.h"
 
 class ChessPieceBase
 {
@@ -15,16 +16,22 @@ public:
 	int player = 1;
 	std::string chessPieceType = "";
 
-	ChessPieceBase(std::string id = "",
-		sf::Vector2f startingPosistion = sf::Vector2f(0, 0),
-		std::string assetName = "",
+	ChessPieceBase(std::string id,
+		sf::Vector2f startingPosistion,
+		std::string assetName,
 		int player = 1,
-		std::string chessPieceType = "Pawn") {
+		std::string chessPieceType = "") {
 		id = id;
 		startingPosistion = startingPosistion;
 		assetName = assetName;
 		player = player;
 		chessPieceType = chessPieceType;
+
+		texture.loadFromFile(assetName);
+		baseChessPiece.setTexture(texture);
+		baseChessPiece.setScale(sf::Vector2f(chessPieceWidth / baseChessPiece.getLocalBounds().width, chessPieceHeight / baseChessPiece.getLocalBounds().height));
+		baseChessPiece.setPosition(startingPosistion);
+		sf::Vector2f scale = baseChessPiece.getScale();
 	}
 	
 	sf::Vector2f posistion = startingPosistion;
@@ -39,22 +46,10 @@ public:
 	int	numberXPosition = 0;
 	int numberYPosition = 0;
 	
-	  virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType) {
+	virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct> boardSquareAttributes) {
 		std::cout << "hit base" << std::endl;
 		return false;
 	};
-
-	void initializeChessPiece(std::string newId, sf::Vector2f newPosistion, std::string assetName, int playerType, std::string chessType ) {
-		texture.loadFromFile(assetName);
-		baseChessPiece.setTexture(texture);
-		baseChessPiece.setScale(sf::Vector2f(chessPieceWidth/ baseChessPiece.getLocalBounds().width, chessPieceHeight/ baseChessPiece.getLocalBounds().height));
-		baseChessPiece.setPosition(newPosistion);
-		sf::Vector2f scale = baseChessPiece.getScale();
-		std::cout << scale.x << std::endl;
-		player = playerType;
-		id = newId;
-		chessPieceType = chessType;
-	}
 
 	void move(sf::Vector2f newPosistion, sf::Vector2f gridPositions, bool didReachEnd) {
 		posistion = newPosistion;
