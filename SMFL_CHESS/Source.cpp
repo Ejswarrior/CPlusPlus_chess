@@ -126,22 +126,22 @@ int main() {
 				if (i == 11) {
 					boardSquareStruct.chessPieceId = player1Pawn4->id;
 					player1Pawn4->numberYPosition = 2;
-					player1Pawn4->numberXPosition = 3;
+					player1Pawn4->numberXPosition = 4;
 				}
 				if (i == 12) {
 					boardSquareStruct.chessPieceId = player1Pawn5->id;
 					player1Pawn5->numberYPosition = 2;
-					player1Pawn5->numberXPosition = 4;
+					player1Pawn5->numberXPosition = 5;
 				}
 				if (i == 13) {
 					boardSquareStruct.chessPieceId = player1Pawn6->id;
 					player1Pawn6->numberYPosition = 2;
-					player1Pawn6->numberXPosition = 5;
+					player1Pawn6->numberXPosition = 6;
 				}
 				if (i == 14) {
 					boardSquareStruct.chessPieceId = player1Pawn7->id;
 					player1Pawn7->numberYPosition = 2;
-					player1Pawn7->numberXPosition = 6;
+					player1Pawn7->numberXPosition = 7;
 				}
 				if (i == 15) {
 					boardSquareStruct.chessPieceId = player1Pawn8->id;
