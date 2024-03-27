@@ -8,7 +8,9 @@ class Pawn :
      public ChessPieceBase
 {
  
-   
+private: 
+    int numberOfMoves = 0;
+
 public:
    Pawn(std::string id,
        sf::Vector2f startingPosistion,
@@ -27,7 +29,6 @@ public:
    }
 
 
-    int numberOfMoves = 0;
      bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct> boardSquareAttributes) override {
          std::cout << (*this).numberYPosition << std::endl;
          std::cout << numberYPosition << std::endl;

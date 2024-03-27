@@ -11,6 +11,7 @@
 #include "Queen.h"
 #include "King.h"
 #include "BoardSquareStruct.h"
+#include "WinMenu.h"
 
 
 void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPieceBase* chessPiece, int numberXPosition, int numberYPosition) {
@@ -36,12 +37,9 @@ int main() {
 	bool initialized = false;
 	bool hasPawnReachedEnd = false;
 	int currentPlayerTurn = 1;
-	int xPosistion = 0;
-	int yPosistion = 0;
-	int xPosistionCount = 1;
-	int yPoisitionCount = 1;
-
+	WinMenu menuWin;
 	
+
 	//Todo: Find a better way to initialize all the Chess pieces
 
 	ChessPieceBase* player1Pawn1 = new Pawn("player1Pawn1", sf::Vector2f(0, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
@@ -82,6 +80,10 @@ int main() {
 	
 
 	if (!initialized) {
+		int xPosistion = 0;
+		int yPosistion = 0;
+		int xPosistionCount = 1;
+		int yPoisitionCount = 1;
 		for (int i = 0; i <= 64; i++) {
 
 			boardSquareStruct boardSquareStruct;
@@ -249,9 +251,14 @@ int main() {
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
+			if (hasAPlayerWon.isKingTaken && event.type == sf::Event::KeyPressed) {
+				window.close();
+			}
 
 			if (event.type == sf::Event::MouseButtonPressed)
 			{
+
+
 				if (event.mouseButton.button == sf::Mouse::Left) 
 				{
 					//Select the Chess Piece
@@ -310,6 +317,7 @@ int main() {
 									//Check if we take other players chess piece
 									if (currentChessPiece != nullptr && currentChessPiece != currentlySelectedChessPiece.selectedChessPiece && currentlySelectedChessPiece.selectedChessPiece->player != currentChessPiece->player) {
 										if (currentChessPiece->chessPieceType == "king") {
+											menuWin.player = currentlySelectedChessPiece.selectedChessPiece->player;
 											hasAPlayerWon.isKingTaken = true;
 											hasAPlayerWon.whichPlayerWon = currentlySelectedChessPiece.selectedChessPiece->player;
 											break;
@@ -330,6 +338,7 @@ int main() {
 									currentlySelectedChessPiece.isCurrentlySelected = false;
 									currentlySelectedChessPiece.selectedChessPiece = nullptr;
 									currentlySelectedChessPiece.canDeleteSelected = true;
+								;
 
 								}
 								// If we can't move remove selected Chess Piece
@@ -395,6 +404,7 @@ int main() {
 				if (chessPiece->isChessPieceActive) window.draw(chessPiece->baseChessPiece);
 
 			}
+			if(hasAPlayerWon.isKingTaken) menuWin.drawMenu(window);
 			window.display();
 	}
 
