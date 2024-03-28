@@ -1,17 +1,21 @@
 #pragma once
+#define LOGGER_STRUCT 
 #include <vector>
 #include <iostream>
 #include <string> 
 #include <format>
 
 struct loggerStruct {
-	std::string moveMessage;
-	int player;
-	std::vector<int> newMoves;
-	std::vector<int> oldMoves;
+	std::string moveMessage = "";
+	int player = 1;
+	std::vector<int> newMoves = {};
+	std::vector<int> oldMoves = {};
 };
+
 class ChessPieceMoves
 {
+
+
 private:
 
 	std::vector<loggerStruct> gameMoves;
@@ -52,14 +56,16 @@ public:
 
 		else {
 			std::vector<loggerStruct> playerGameMoves;
-				
-				for (int i = 0; i < gameMoves.size(); i++) {
-					loggerStruct gameMove = gameMoves.at(i);
-					
-					if (gameMove.player == player) playerGameMoves.push_back(gameMove);
-				}
+				if(gameMoves.size() > 0) {
+					for (int i = 0; i < gameMoves.size(); i++) {
+						loggerStruct gameMove = gameMoves.at(i);
 
-				return playerGameMoves;
+						if (gameMove.player == player) playerGameMoves.push_back(gameMove);
+					}
+
+					return playerGameMoves;
+				}
+			
 		}
 	}
 };

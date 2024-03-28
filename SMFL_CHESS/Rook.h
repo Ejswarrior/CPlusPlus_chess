@@ -39,8 +39,10 @@ public:
             }
         }
 
-        if (numberXPosition != (*this).numberXPosition && numberYPosition == (*this).numberYPosition || numberYPosition != (*this).numberYPosition && numberXPosition == (*this).numberXPosition)
+        if (numberXPosition != (*this).numberXPosition && numberYPosition == (*this).numberYPosition || numberYPosition != (*this).numberYPosition && numberXPosition == (*this).numberXPosition) {
             return true;
+
+        }
 
         return false;
 

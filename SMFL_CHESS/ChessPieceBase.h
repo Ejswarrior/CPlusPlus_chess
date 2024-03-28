@@ -3,7 +3,7 @@
 #include <vector>
 #include <iostream>
 #include "BoardSquareStruct.h"
-
+#include "ChessPieceMoves.h"
 class ChessPieceBase
 {
 private: 
@@ -22,7 +22,7 @@ public:
 		int player = 1,
 		std::string chessPieceType = "") {
 		id = id;
-		startingPosistion = startingPosistion;
+		startingPosistion = sf::Vector2f(startingPosistion.x, startingPosistion.y + 75);  // We add 75 to move eveything down
 		assetName = assetName;
 		player = player;
 		chessPieceType = chessPieceType;
@@ -51,7 +51,7 @@ public:
 		return false;
 	};
 
-	void move(sf::Vector2f newPosistion, sf::Vector2f gridPositions, bool didReachEnd) {
+	void move(sf::Vector2f newPosistion, sf::Vector2f gridPositions, bool didReachEnd, int newXposition, int newYposition) {
 		posistion = newPosistion;
 
 
@@ -61,7 +61,8 @@ public:
 				std::cout << "Pawn has reached end" << std::endl;
 			}
 		}
-
+		numberXPosition = newXposition;
+		numberYPosition = newYposition;
 		baseChessPiece.setPosition(newPosistion);
 	}
 
@@ -69,6 +70,8 @@ public:
 	sf::Vector2f distanceOfSquares(sf::Vector2f newPosistion) {
 		int distanceY = std::ceil((newPosistion.y - posistion.y) / boardSquareHeight);
 		int distanceX = std::ceil((newPosistion.x - posistion.x) / boardSquareWidth);
+
+
 
 		return sf::Vector2f(distanceX, distanceY);
 	}

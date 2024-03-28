@@ -12,7 +12,7 @@
 #include "King.h"
 #include "BoardSquareStruct.h"
 #include "WinMenu.h"
-
+#include "Topbar.h"
 
 void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPieceBase* chessPiece, int numberXPosition, int numberYPosition) {
 	boardSquare.chessPieceId = chessPiece->id;
@@ -22,10 +22,11 @@ void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPie
 
 
 int main() {
-	sf::RenderWindow window(sf::VideoMode(1280, 720), "My First Window");
+	sf::RenderWindow window(sf::VideoMode(1280, 795), "My First Window");
 	window.setFramerateLimit(60);
 	const int boardSquareWidth = 1280 / 8;
 	const int boardSquareHeight = 720 / 8;
+	const int startingYPostion = 75;
 	const float chessPieceHeight = 100;
 	const float chessPieceWidth = 150;
 	const sf::Color defaultBoardSquareDark = sf::Color{ 68,45,14 };
@@ -38,7 +39,8 @@ int main() {
 	bool hasPawnReachedEnd = false;
 	int currentPlayerTurn = 1;
 	WinMenu menuWin;
-	
+	ChessPieceMoves chessPieceMoves;
+	Topbar topbar;
 
 	//Todo: Find a better way to initialize all the Chess pieces
 
@@ -81,14 +83,14 @@ int main() {
 
 	if (!initialized) {
 		int xPosistion = 0;
-		int yPosistion = 0;
+		int yPosistion = startingYPostion;
 		int xPosistionCount = 1;
 		int yPoisitionCount = 1;
-		for (int i = 0; i <= 64; i++) {
+		for (int i = 0; i < 64; i++) {
 
 			boardSquareStruct boardSquareStruct;
 			if (i == 0) {
-				boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, 0));
+				boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, startingYPostion));
 				boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, 0);
 				boardSquareStruct.numberXPosition = 1;
 				boardSquareStruct.numberYPosistion = 1;
@@ -122,50 +124,15 @@ int main() {
 			}
 
 			else {
-				if (i == 7) {
-				
-					setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook2, 1, 7);
-				}
-			
-				if (i == 9) {
-					setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn2, 2, 2);
-			
-				}
-				if (i == 10) {
-					boardSquareStruct.chessPieceId = player1Pawn3->id;
-					player1Pawn3->numberYPosition = 2;
-					player1Pawn3->numberXPosition = 3;
-				}
-				if (i == 11) {
-					boardSquareStruct.chessPieceId = player1Pawn4->id;
-					player1Pawn4->numberYPosition = 2;
-					player1Pawn4->numberXPosition = 4;
-				}
-				if (i == 12) {
-					boardSquareStruct.chessPieceId = player1Pawn5->id;
-					player1Pawn5->numberYPosition = 2;
-					player1Pawn5->numberXPosition = 5;
-				}
-				if (i == 13) {
-					boardSquareStruct.chessPieceId = player1Pawn6->id;
-					player1Pawn6->numberYPosition = 2;
-					player1Pawn6->numberXPosition = 6;
-				}
-				if (i == 14) {
-					boardSquareStruct.chessPieceId = player1Pawn7->id;
-					player1Pawn7->numberYPosition = 2;
-					player1Pawn7->numberXPosition = 7;
-				}
-				if (i == 15) {
-					boardSquareStruct.chessPieceId = player1Pawn8->id;
-					player1Pawn8->numberYPosition = 2;
-					player1Pawn8->numberXPosition = 8;
-				}
-				
-				if (i == 49) {
-					setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn2, 2, 7);
-
-				}
+				if (i == 7) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook2, 1, 7);
+				if (i == 9) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn2, 2, 2);
+				if (i == 10) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn3, 3, 2);
+				if (i == 11) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn4, 4, 2);
+				if (i == 12) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn5, 5, 2);
+				if (i == 13) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn6, 6, 2);
+				if (i == 14) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn7, 7, 2);
+				if (i == 15) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn8, 8, 2);
+				if (i == 49) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn2, 2, 7);
 				if (i == 50) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn3, 3, 7);
 				if (i == 51) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn4, 4, 7);
 				if (i == 52) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn5, 5, 7);
@@ -316,7 +283,7 @@ int main() {
 
 									//Check if we take other players chess piece
 									if (currentChessPiece != nullptr && currentChessPiece != currentlySelectedChessPiece.selectedChessPiece && currentlySelectedChessPiece.selectedChessPiece->player != currentChessPiece->player) {
-										if (currentChessPiece->chessPieceType == "king") {
+										if (currentChessPiece->chessPieceType == "King") {
 											menuWin.player = currentlySelectedChessPiece.selectedChessPiece->player;
 											hasAPlayerWon.isKingTaken = true;
 											hasAPlayerWon.whichPlayerWon = currentlySelectedChessPiece.selectedChessPiece->player;
@@ -326,15 +293,17 @@ int main() {
 									}
 
 									currentChessPiece = currentlySelectedChessPiece.selectedChessPiece;
-									currentChessPiece->numberXPosition = currentBoardSquareStruct.numberXPosition;
-									currentChessPiece->numberYPosition = currentBoardSquareStruct.numberYPosistion;
+
 									currentBoardSquareStruct.chessPieceId = currentChessPiece->id;
 
+									chessPieceMoves.updateMoves(currentlySelectedChessPiece.selectedChessPiece->player, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, currentlySelectedChessPiece.selectedChessPiece->numberXPosition, currentlySelectedChessPiece.selectedChessPiece->numberYPosition, currentlySelectedChessPiece.selectedChessPiece->chessPieceType);
+									currentChessPiece->numberXPosition = currentBoardSquareStruct.numberXPosition;
+									currentChessPiece->numberYPosition = currentBoardSquareStruct.numberYPosistion;
 
 									sf::Vector2f moveCoordinates = sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2));
-									currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd);
+									currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
 									currentPlayerTurn = currentPlayerTurn == 1 ? 2 : 1;
-									std::cout << currentPlayerTurn << std::endl;
+							
 									currentlySelectedChessPiece.isCurrentlySelected = false;
 									currentlySelectedChessPiece.selectedChessPiece = nullptr;
 									currentlySelectedChessPiece.canDeleteSelected = true;
@@ -344,14 +313,13 @@ int main() {
 								// If we can't move remove selected Chess Piece
 								else {
 									currentlySelectedChessPiece.isCurrentlySelected = false;
+									currentlySelectedChessPiece.selectedChessPiece = nullptr;
 									continue;
 								}
 							}
 						}
 
 						if (!currentlySelectedChessPiece.isCurrentlySelected) {
-							logger("hit");
-
 
 							for (int i = 0; i < boardSquareAttributes.size(); ++i) {
 								boardSquareStruct& embeddedBoardSquareStruct = boardSquareAttributes.at(i);
@@ -405,6 +373,7 @@ int main() {
 
 			}
 			if(hasAPlayerWon.isKingTaken) menuWin.drawMenu(window);
+			topbar.draw(window);
 			window.display();
 	}
 
