@@ -273,7 +273,7 @@ int main() {
 								}
 									//Check if we can move from the Chess Piece derived class
 								if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), 
-									currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, 1, boardSquareAttributes)) {
+									currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, currentChessPiece != nullptr ? currentChessPiece->player : 0, boardSquareAttributes)) {
 									//Check if we try to take our own chess piece
 									if (currentBoardSquareStruct.chessPieceId.size() > 0 && currentlySelectedChessPiece.selectedChessPiece->player == currentChessPiece->player) {
 										currentlySelectedChessPiece.selectedChessPiece = nullptr;
