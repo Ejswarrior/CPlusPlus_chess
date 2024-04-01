@@ -20,6 +20,21 @@ void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPie
 	chessPiece->numberXPosition = numberXPosition;
 }
 
+void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
+	for (ChessPieceBase* chessPiece : activeChessPieces) {
+		chessPiece->baseChessPiece.setPosition(chessPiece->startingPosistion);
+	}
+}
+
+bool clickedOnObject(sf::Vector2f objectPosition, sf::Vector2f objectSize, sf::Vector2f mouseClickPosition) {
+
+	if (mouseClickPosition.x > objectPosition.x && mouseClickPosition.x < objectPosition.x + objectSize.y
+		&& mouseClickPosition.y > objectPosition.y && mouseClickPosition.y < objectPosition.y + objectSize.x)
+		return true;
+	else return false;
+
+}
+
 
 int main() {
 	sf::RenderWindow window(sf::VideoMode(1280, 795), "My First Window");
@@ -211,7 +226,6 @@ int main() {
 		player2King,
 	};
 
-
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -227,14 +241,17 @@ int main() {
 
 
 				if (event.mouseButton.button == sf::Mouse::Left) 
-				{
+				{	
+
+					if (clickedOnObject(topbar.resetButtonPosistion, topbar.resetButtonSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+						resetGame(activeChessPieces);
+					}
 					//Select the Chess Piece
 					if (!currentlySelectedChessPiece.isCurrentlySelected) {
 						for (boardSquareStruct& currentBoardSquareStruct : boardSquareAttributes) {
 							sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
 							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
-							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
-								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
+							if (clickedOnObject(boardSquarePosistion, sf::Vector2f(boardSquareHeight, boardSquareWidth), sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
 					
 								if (!currentBoardSquareStruct.chessPieceId.empty() && currentBoardSquareStruct.chessPieceId.size() > 0) {
 									logger("found chess piece");
@@ -262,8 +279,7 @@ int main() {
 							sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
 							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
 							//Check for mouse position compared to boardSquare
-							if (event.mouseButton.x > boardSquarePosistion.x && event.mouseButton.x < boardSquarePosistion.x + boardSquareWidth
-								&& event.mouseButton.y > boardSquarePosistion.y && event.mouseButton.y < boardSquarePosistion.y + boardSquareHeight) {
+							if (clickedOnObject(boardSquarePosistion, sf::Vector2f(boardSquareHeight, boardSquareWidth) , sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
 								ChessPieceBase* currentChessPiece = nullptr;
 
 								for (ChessPieceBase* activeChessPiece : activeChessPieces) {
