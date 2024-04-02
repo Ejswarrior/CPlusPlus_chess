@@ -13,6 +13,7 @@
 #include "BoardSquareStruct.h"
 #include "WinMenu.h"
 #include "Topbar.h"
+#include "SelectChessPieceMenu.h"
 
 void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPieceBase* chessPiece, int numberXPosition, int numberYPosition) {
 	boardSquare.chessPieceId = chessPiece->id;
@@ -22,7 +23,7 @@ void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPie
 
 void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
 	for (ChessPieceBase* chessPiece : activeChessPieces) {
-		chessPiece->baseChessPiece.setPosition(chessPiece->startingPosistion);
+		chessPiece->baseChessPiece.setPosition(sf::Vector2f(chessPiece->startingPosistion.x, chessPiece->startingPosistion.y + 75));
 	}
 }
 
@@ -56,6 +57,7 @@ int main() {
 	WinMenu menuWin;
 	ChessPieceMoves chessPieceMoves;
 	Topbar topbar;
+	SelectChessPieceMenu chessPieceMenu;
 
 	//Todo: Find a better way to initialize all the Chess pieces
 
@@ -94,100 +96,109 @@ int main() {
 
 
 	selectedChessPieceStruct currentlySelectedChessPiece;
+
+	auto intializeChessBoard = [player1Rook1, player1Pawn1, player2Pawn1, player2Rook1, player1Rook2, player1Pawn2, player1Pawn3, player1Pawn4, player1Pawn5, player1Pawn6, player1Pawn7, player1Pawn8, 
+		player2Pawn2, player2Pawn3, player2Pawn4, player2Pawn5, player2Pawn6, player2Pawn7, player2Pawn8, player2Knight1, player2Bishop1, player2Queen, player2King, player2Bishop2, player2Knight2, player2Rook2,
+		player1Knight1, player1Knight2, player1Bishop1, player1Bishop2, player1Queen, defaultBoardSquareDark, defaultBoardSquareLight]()
+	{		
+			std::vector<boardSquareStruct> boardSqaureIntializer;
+			int xPosistion = 0;
+			int yPosistion = startingYPostion;
+			int xPosistionCount = 1;
+			int yPoisitionCount = 1;
+			for (int i = 0; i < 64; i++) {
+
+				boardSquareStruct boardSquareStruct;
+				if (i == 0) {
+					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, startingYPostion));
+					boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, 0);
+					boardSquareStruct.numberXPosition = 1;
+					boardSquareStruct.numberYPosistion = 1;
+
+					setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook1, 1, 1);
+
+				}
+
+
+
+				else if (i % 8 == 0) {
+					yPosistion += boardSquareHeight;
+					boardSquareStruct.numberXPosition = 1;
+					xPosistionCount = 1;
+					yPoisitionCount += 1;
+					boardSquareStruct.numberYPosistion = yPoisitionCount;
+					xPosistion = 0;
+					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, yPosistion));
+					boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, yPosistion);
+					if (i == 8) {
+						boardSquareStruct.chessPieceId = player1Pawn1->id;
+						player1Pawn1->numberYPosition = 2;
+						player1Pawn1->numberXPosition = 1;
+					}
+
+					if (i == 48) {
+						setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn1, 1, 7);
+					}
+					if (i == 56) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Rook1, 1, 8);
+
+				}
+
+				else {
+					if (i == 7) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook2, 1, 7);
+					if (i == 9) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn2, 2, 2);
+					if (i == 10) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn3, 3, 2);
+					if (i == 11) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn4, 4, 2);
+					if (i == 12) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn5, 5, 2);
+					if (i == 13) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn6, 6, 2);
+					if (i == 14) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn7, 7, 2);
+					if (i == 15) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn8, 8, 2);
+					if (i == 49) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn2, 2, 7);
+					if (i == 50) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn3, 3, 7);
+					if (i == 51) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn4, 4, 7);
+					if (i == 52) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn5, 5, 7);
+					if (i == 53) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn6, 6, 7);
+					if (i == 54) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn7, 7, 7);
+					if (i == 55) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn8, 8, 7);
+					if (i == 57) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Knight1, 2, 8);
+					if (i == 58) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Bishop1, 3, 8);
+					if (i == 59) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Queen, 4, 8);
+					if (i == 60) setChessPieceBoardSquareAttributes(boardSquareStruct, player2King, 5, 8);
+					if (i == 61) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Bishop2, 6, 8);
+					if (i == 62) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Knight2, 7, 8);
+					if (i == 63) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Rook2, 8, 8);
+
+
+
+
+					if (i == 1) {
+						setChessPieceBoardSquareAttributes(boardSquareStruct, player1Knight1, 2, 1);
+					}
+
+					if (i == 6) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Knight2, 7, 1);
+					if (i == 2) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Bishop1, 3, 1);
+					if (i == 5)setChessPieceBoardSquareAttributes(boardSquareStruct, player1Bishop2, 6, 1);
+					if (i == 3) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Queen, 4, 1);
+					boardSquareStruct.numberXPosition = xPosistionCount + 1;
+					xPosistionCount += 1;
+					xPosistion += boardSquareWidth;
+					boardSquareStruct.numberYPosistion = yPoisitionCount;
+					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(xPosistion, yPosistion));
+					boardSquareStruct.boardSquarePosistion = sf::Vector2f(xPosistion, yPosistion);
+				}
+				boardSquareStruct.boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
+				if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareDark);
+				else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareLight);
+
+				else boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
+
+				 boardSqaureIntializer.push_back(boardSquareStruct);
+			}
+			return boardSqaureIntializer;
+	};
 	
 
 	if (!initialized) {
-		int xPosistion = 0;
-		int yPosistion = startingYPostion;
-		int xPosistionCount = 1;
-		int yPoisitionCount = 1;
-		for (int i = 0; i < 64; i++) {
-
-			boardSquareStruct boardSquareStruct;
-			if (i == 0) {
-				boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, startingYPostion));
-				boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, 0);
-				boardSquareStruct.numberXPosition = 1;
-				boardSquareStruct.numberYPosistion = 1;
-		
-				setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook1, 1, 1);
-		
-			}
-
-
-
-			else if (i % 8 == 0) {
-				yPosistion += boardSquareHeight;
-				boardSquareStruct.numberXPosition = 1;
-				xPosistionCount = 1;
-				yPoisitionCount += 1;
-				boardSquareStruct.numberYPosistion = yPoisitionCount;
-				xPosistion = 0;
-				boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, yPosistion));
-				boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, yPosistion);
-				if (i == 8) {
-					boardSquareStruct.chessPieceId = player1Pawn1->id;
-					player1Pawn1->numberYPosition = 2;
-					player1Pawn1->numberXPosition = 1;
-				}
-
-				if (i == 48) {
-					setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn1, 1, 7);
-				}
-				if(i == 56) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Rook1, 1, 8);
-
-			}
-
-			else {
-				if (i == 7) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook2, 1, 7);
-				if (i == 9) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn2, 2, 2);
-				if (i == 10) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn3, 3, 2);
-				if (i == 11) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn4, 4, 2);
-				if (i == 12) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn5, 5, 2);
-				if (i == 13) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn6, 6, 2);
-				if (i == 14) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn7, 7, 2);
-				if (i == 15) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn8, 8, 2);
-				if (i == 49) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn2, 2, 7);
-				if (i == 50) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn3, 3, 7);
-				if (i == 51) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn4, 4, 7);
-				if (i == 52) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn5, 5, 7);
-				if (i == 53) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn6, 6, 7);
-				if (i == 54) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn7, 7, 7);
-				if (i == 55) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn8, 8, 7);
-				if (i == 57) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Knight1, 2, 8);
-				if (i == 58) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Bishop1, 3, 8);
-				if (i == 59) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Queen, 4, 8);
-				if (i == 60) setChessPieceBoardSquareAttributes(boardSquareStruct, player2King, 5, 8);
-				if (i == 61) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Bishop2, 6, 8);
-				if (i == 62) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Knight2, 7, 8);
-				if (i == 63) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Rook2, 8, 8);
-
-
-
-				
-				if (i == 1) {
-					setChessPieceBoardSquareAttributes(boardSquareStruct, player1Knight1, 2, 1);
-				}
-
-				if (i == 6) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Knight2, 7, 1);
-				if (i == 2) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Bishop1, 3, 1);
-				if (i == 5)setChessPieceBoardSquareAttributes(boardSquareStruct, player1Bishop2, 6, 1);
-				if (i == 3) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Queen, 4, 1);
-				boardSquareStruct.numberXPosition = xPosistionCount + 1;
-				xPosistionCount += 1;
-				xPosistion += boardSquareWidth;
-				boardSquareStruct.numberYPosistion = yPoisitionCount;
-				boardSquareStruct.boardSquare.setPosition(sf::Vector2f(xPosistion, yPosistion));
-				boardSquareStruct.boardSquarePosistion = sf::Vector2f(xPosistion, yPosistion);
-			}
-			boardSquareStruct.boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
-			if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareDark);
-			else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareLight);
-
-			else boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
-
-			boardSquareAttributes.push_back(boardSquareStruct);
-		}
+		boardSquareAttributes = intializeChessBoard();
 	}
 	initialized = true;
 
@@ -245,6 +256,8 @@ int main() {
 
 					if (clickedOnObject(topbar.resetButtonPosistion, topbar.resetButtonSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
 						resetGame(activeChessPieces);
+						boardSquareAttributes.clear();
+						boardSquareAttributes = intializeChessBoard();
 					}
 					//Select the Chess Piece
 					if (!currentlySelectedChessPiece.isCurrentlySelected) {
@@ -389,6 +402,7 @@ int main() {
 
 			}
 			if(hasAPlayerWon.isKingTaken) menuWin.drawMenu(window);
+			chessPieceMenu.draw(window);
 			topbar.draw(window);
 			window.display();
 	}

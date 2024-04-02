@@ -160,6 +160,7 @@
     <ClCompile Include="Queen.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="Pawn.cpp" />
+    <ClCompile Include="SelectChessPieceMenu.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Topbar.cpp" />
     <ClCompile Include="WinMenu.cpp" />
@@ -176,6 +177,7 @@
     <ClInclude Include="Header.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="SelectChessPieceMenu.h" />
     <ClInclude Include="struct_header.h" />
     <ClInclude Include="Topbar.h" />
     <ClInclude Include="WinMenu.h" />
