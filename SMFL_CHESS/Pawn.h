@@ -12,6 +12,8 @@ private:
     int numberOfMoves = 0;
 
 public:
+    bool hasReachedEnd = true;
+
    Pawn(std::string id,
        sf::Vector2f startingPosistion,
        std::string assetName,

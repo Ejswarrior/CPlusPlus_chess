@@ -45,6 +45,8 @@ public:
 	bool isChessPieceActive = true;
 	int	numberXPosition = 0;
 	int numberYPosition = 0;
+	bool pawnHasReachedEnd;
+	int boardSquareIndex = 0;
 	
 	virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct> boardSquareAttributes) {
 		std::cout << "hit base" << std::endl;
@@ -58,7 +60,8 @@ public:
 		if (chessPieceType == "Pawn") {
 			//TODO: Need to create UI to promote pawn to another chess piece
 			if (player == 1 && gridPositions.y == 8  || player == 2 && gridPositions.y == 1 ) {
-				std::cout << "Pawn has reached end" << std::endl;
+				didReachEnd = true;
+				pawnHasReachedEnd = true;
 			}
 		}
 		numberXPosition = newXposition;
