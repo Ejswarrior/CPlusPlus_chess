@@ -15,18 +15,21 @@ public:
 	std::string assetName = "";
 	int player = 1;
 	std::string chessPieceType = "";
+	sf::Vector2f startingIndexes = sf::Vector2f(0, 0);
+	int startingBoardSquareIndex = 0;
 
 	ChessPieceBase(std::string id,
 		sf::Vector2f startingPosistion,
 		std::string assetName,
 		int player = 1,
-		std::string chessPieceType = "") {
+		std::string chessPieceType = "", sf::Vector2f startingIndexes, int startingBoardSquareIndex) {
 		id = id;
 		startingPosistion = sf::Vector2f(startingPosistion.x, startingPosistion.y + 75);  // We add 75 to move eveything down
 		assetName = assetName;
 		player = player;
 		chessPieceType = chessPieceType;
-
+		startingIndexes = startingIndexes;
+		startingBoardSquareIndex = startingBoardSquareIndex;
 		texture.loadFromFile(assetName);
 		baseChessPiece.setTexture(texture);
 		baseChessPiece.setScale(sf::Vector2f(chessPieceWidth / baseChessPiece.getLocalBounds().width, chessPieceHeight / baseChessPiece.getLocalBounds().height));
@@ -38,15 +41,24 @@ public:
 	sf::Texture texture;
 	sf::Sprite baseChessPiece;
 
-	float chessPieceHeight = 100;
-	float chessPieceWidth = 150;
-	int boardSquareWidth = 1280 / 8;
-	int boardSquareHeight = 720 / 8;
+	const float chessPieceHeight = 100;
+	const float chessPieceWidth = 150;
+	const int boardSquareWidth = 1280 / 8;
+	const int boardSquareHeight = 720 / 8;
 	bool isChessPieceActive = true;
 	int	numberXPosition = 0;
 	int numberYPosition = 0;
-	bool pawnHasReachedEnd;
+	bool pawnHasReachedEnd = false;
 	int boardSquareIndex = 0;
+
+	void setChessPieceAttributes(int index, boardSquareStruct boardSquare, int newNumberXPosition, int newNumberYPosition) {
+		if (index == startingBoardSquareIndex) {
+			boardSquare.chessPieceId = id;
+			numberYPosition = newNumberYPosition;
+			numberXPosition = newNumberXPosition;
+			boardSquareIndex = index;
+		}
+	}
 	
 	virtual bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct> boardSquareAttributes) {
 		std::cout << "hit base" << std::endl;
