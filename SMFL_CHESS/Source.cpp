@@ -14,6 +14,9 @@
 #include "WinMenu.h"
 #include "Topbar.h"
 #include "SelectChessPieceMenu.h"
+#include <algorithm>
+#include <iterator>
+
 
 void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPieceBase* chessPiece, int numberXPosition, int numberYPosition, int index) {
 	boardSquare.chessPieceId = chessPiece->id;
@@ -62,146 +65,42 @@ int main() {
 
 	//Todo: Find a better way to initialize all the Chess pieces
 
-	ChessPieceBase* player1Pawn1 = new Pawn("player1Pawn1", sf::Vector2f(0, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player1Pawn2 = new Pawn("player1Pawn2", sf::Vector2f(boardSquareWidth, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player1Pawn3 = new Pawn("player1Pawn3", sf::Vector2f(boardSquareWidth * 2, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player1Pawn4 = new Pawn("player1Pawn4", sf::Vector2f(boardSquareWidth * 3, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player1Pawn5 = new Pawn("player1Pawn5", sf::Vector2f(boardSquareWidth * 4, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player1Pawn6 = new Pawn("player1Pawn6", sf::Vector2f(boardSquareWidth * 5, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player1Pawn7 = new Pawn("player1Pawn7", sf::Vector2f(boardSquareWidth * 6, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player1Pawn8 = new Pawn("player1Pawn8", sf::Vector2f(boardSquareWidth * 7, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn");
-	ChessPieceBase* player2Pawn1 = new Pawn("player2Pawn1", sf::Vector2f(0, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player2Pawn2 = new Pawn("player2Pawn2", sf::Vector2f(boardSquareWidth, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player2Pawn3 = new Pawn("player2Pawn3", sf::Vector2f(boardSquareWidth * 2, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player2Pawn4 = new Pawn("player2Pawn4", sf::Vector2f(boardSquareWidth * 3, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player2Pawn5 = new Pawn("player2Pawn5", sf::Vector2f(boardSquareWidth * 4, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player2Pawn6 = new Pawn("player2Pawn6", sf::Vector2f(boardSquareWidth * 5, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player2Pawn7 = new Pawn("player2Pawn7", sf::Vector2f(boardSquareWidth * 6, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player2Pawn8 = new Pawn("player2Pawn8", sf::Vector2f(boardSquareWidth * 7, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn");
-	ChessPieceBase* player1Rook1 = new Rook("player1Rook1", sf::Vector2f(0, 0), "images/player1Rook.png", 1, "Rook");
-	ChessPieceBase* player1Rook2 = new Rook("player1Rook2", sf::Vector2f(boardSquareWidth * 7, 0), "images/player1Rook.png", 1, "Rook");
-	ChessPieceBase* player1Knight1 = new Knight("player1Knight1", sf::Vector2f(boardSquareWidth, 0), "images/knightPlayer1.svg.png", 1, "Knight");
-	ChessPieceBase* player1Knight2 = new Knight("player1Knight2", sf::Vector2f(boardSquareWidth * 6, 0), "images/knightPlayer1.svg.png", 1, "Knight");
-	ChessPieceBase* player1Bishop1 = new Bishop("player1Bishop1", sf::Vector2f(boardSquareWidth * 2, 0), "images/player1Bishop.png", 1, "Bishop");
-	ChessPieceBase* player1Bishop2 = new Bishop("player1Bishop2", sf::Vector2f(boardSquareWidth * 5, 0), "images/player1Bishop.png", 1, "Bishop");
-	ChessPieceBase* player1Queen = new Queen("player1Queen", sf::Vector2f(boardSquareWidth * 3, 0), "images/queenPlayer1.svg.png", 1, "Queen");
-	ChessPieceBase* player1King = new King("player1King", sf::Vector2f(boardSquareWidth * 4, 0), "images/kingPlayer1.svg.png", 1, "King");
-	ChessPieceBase* player2Rook1 = new Rook("player2Rook1", sf::Vector2f(0, boardSquareHeight * 7), "images/player2Rook.png", 1, "Rook");
-	ChessPieceBase* player2Rook2 = new Rook("player2Rook2", sf::Vector2f(boardSquareWidth * 7, boardSquareHeight * 7), "images/player2Rook.png", 2, "Rook");
-	ChessPieceBase* player2Knight1 = new Knight("player2Knight1", sf::Vector2f(boardSquareWidth, boardSquareHeight * 7), "images/knightPlayer2.svg.png", 2, "Knight");
-	ChessPieceBase* player2Knight2 = new Knight("player2Knight2", sf::Vector2f(boardSquareWidth * 6, boardSquareHeight * 7), "images/knightPlayer2.svg.png", 2, "Knight");
-	ChessPieceBase* player2Bishop1 = new Bishop("player2Bishop1", sf::Vector2f(boardSquareWidth * 2, boardSquareHeight * 7), "images/player2Bishop.png", 2, "Bishop");
-	ChessPieceBase* player2Bishop2 = new Bishop("player2Bishop2", sf::Vector2f(boardSquareWidth * 5, boardSquareHeight * 7), "images/player2Bishop.png", 2, "Bishop");
-	ChessPieceBase* player2Queen = new Queen("player2Queen", sf::Vector2f(boardSquareWidth * 3, boardSquareHeight * 7), "images/queenPlayer2.svg.png", 2, "Queen");
-	ChessPieceBase* player2King = new King("player2King", sf::Vector2f(boardSquareWidth * 4, boardSquareHeight * 7), "images/kingPlayer2.svg.png", 2, "King");
+	ChessPieceBase* player1Pawn1 = new Pawn("player1Pawn1", sf::Vector2f(0, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(1, 2), 8);
+	ChessPieceBase* player1Pawn2 = new Pawn("player1Pawn2", sf::Vector2f(boardSquareWidth, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(2,2), 9);
+	ChessPieceBase* player1Pawn3 = new Pawn("player1Pawn3", sf::Vector2f(boardSquareWidth * 2, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(3,2), 10);
+	ChessPieceBase* player1Pawn4 = new Pawn("player1Pawn4", sf::Vector2f(boardSquareWidth * 3, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(4, 2), 11);
+	ChessPieceBase* player1Pawn5 = new Pawn("player1Pawn5", sf::Vector2f(boardSquareWidth * 4, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(5, 2), 12);
+	ChessPieceBase* player1Pawn6 = new Pawn("player1Pawn6", sf::Vector2f(boardSquareWidth * 5, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(6, 2), 13);
+	ChessPieceBase* player1Pawn7 = new Pawn("player1Pawn7", sf::Vector2f(boardSquareWidth * 6, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(7, 2), 14);
+	ChessPieceBase* player1Pawn8 = new Pawn("player1Pawn8", sf::Vector2f(boardSquareWidth * 7, boardSquareHeight), "images/player1Pawn.png", 1, "Pawn", sf::Vector2f(8, 2), 15);
+	ChessPieceBase* player2Pawn1 = new Pawn("player2Pawn1", sf::Vector2f(0, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(1, 7), 48);
+	ChessPieceBase* player2Pawn2 = new Pawn("player2Pawn2", sf::Vector2f(boardSquareWidth, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(2, 7), 49);
+	ChessPieceBase* player2Pawn3 = new Pawn("player2Pawn3", sf::Vector2f(boardSquareWidth * 2, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(3, 7), 50);
+	ChessPieceBase* player2Pawn4 = new Pawn("player2Pawn4", sf::Vector2f(boardSquareWidth * 3, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(4, 7), 51);
+	ChessPieceBase* player2Pawn5 = new Pawn("player2Pawn5", sf::Vector2f(boardSquareWidth * 4, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(5, 7), 52);
+	ChessPieceBase* player2Pawn6 = new Pawn("player2Pawn6", sf::Vector2f(boardSquareWidth * 5, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(6, 7), 53);
+	ChessPieceBase* player2Pawn7 = new Pawn("player2Pawn7", sf::Vector2f(boardSquareWidth * 6, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(7, 7), 54);
+	ChessPieceBase* player2Pawn8 = new Pawn("player2Pawn8", sf::Vector2f(boardSquareWidth * 7, boardSquareHeight * 6), "images/player2Pawn.png", 2, "Pawn", sf::Vector2f(8,7), 55);
+	ChessPieceBase* player1Rook1 = new Rook("player1Rook1", sf::Vector2f(0, 0), "images/player1Rook.png", 1, "Rook", sf::Vector2f(0, 0), 0);
+	ChessPieceBase* player1Rook2 = new Rook("player1Rook2", sf::Vector2f(boardSquareWidth * 7, 0), "images/player1Rook.png", 1, "Rook", sf::Vector2f(8, 1), 7);
+	ChessPieceBase* player1Knight1 = new Knight("player1Knight1", sf::Vector2f(boardSquareWidth, 0), "images/knightPlayer1.svg.png", 1, "Knight", sf::Vector2f(2, 1), 1);
+	ChessPieceBase* player1Knight2 = new Knight("player1Knight2", sf::Vector2f(boardSquareWidth * 6, 0), "images/knightPlayer1.svg.png", 1, "Knight", sf::Vector2f(7, 1), 6);
+	ChessPieceBase* player1Bishop1 = new Bishop("player1Bishop1", sf::Vector2f(boardSquareWidth * 2, 0), "images/player1Bishop.png", 1, "Bishop", sf::Vector2f(3, 1), 2);
+	ChessPieceBase* player1Bishop2 = new Bishop("player1Bishop2", sf::Vector2f(boardSquareWidth * 5, 0), "images/player1Bishop.png", 1, "Bishop", sf::Vector2f(6, 1), 5);
+	ChessPieceBase* player1Queen = new Queen("player1Queen", sf::Vector2f(boardSquareWidth * 3, 0), "images/queenPlayer1.svg.png", 1, "Queen", sf::Vector2f(4, 1), 3);
+	ChessPieceBase* player1King = new King("player1King", sf::Vector2f(boardSquareWidth * 4, 0), "images/kingPlayer1.svg.png", 1, "King", sf::Vector2f(5, 1), 4);
+	ChessPieceBase* player2Rook1 = new Rook("player2Rook1", sf::Vector2f(0, boardSquareHeight * 7), "images/player2Rook.png", 1, "Rook", sf::Vector2f(1, 8), 56);
+	ChessPieceBase* player2Rook2 = new Rook("player2Rook2", sf::Vector2f(boardSquareWidth * 7, boardSquareHeight * 7), "images/player2Rook.png", 2, "Rook", sf::Vector2f(8, 8), 63);
+	ChessPieceBase* player2Knight1 = new Knight("player2Knight1", sf::Vector2f(boardSquareWidth, boardSquareHeight * 7), "images/knightPlayer2.svg.png", 2, "Knight", sf::Vector2f(2, 8), 57);
+	ChessPieceBase* player2Knight2 = new Knight("player2Knight2", sf::Vector2f(boardSquareWidth * 6, boardSquareHeight * 7), "images/knightPlayer2.svg.png", 2, "Knight", sf::Vector2f(7, 8), 62);
+	ChessPieceBase* player2Bishop1 = new Bishop("player2Bishop1", sf::Vector2f(boardSquareWidth * 2, boardSquareHeight * 7), "images/player2Bishop.png", 2, "Bishop", sf::Vector2f(3, 8), 58);
+	ChessPieceBase* player2Bishop2 = new Bishop("player2Bishop2", sf::Vector2f(boardSquareWidth * 5, boardSquareHeight * 7), "images/player2Bishop.png", 2, "Bishop", sf::Vector2f(6, 8), 61);
+	ChessPieceBase* player2Queen = new Queen("player2Queen", sf::Vector2f(boardSquareWidth * 3, boardSquareHeight * 7), "images/queenPlayer2.svg.png", 2, "Queen", sf::Vector2f(4, 8), 59);
+	ChessPieceBase* player2King = new King("player2King", sf::Vector2f(boardSquareWidth * 4, boardSquareHeight * 7), "images/kingPlayer2.svg.png", 2, "King", sf::Vector2f(5, 8), 60);
 
 
 	selectedChessPieceStruct currentlySelectedChessPiece;
 
-	auto intializeChessBoard = [player1Rook1, player1Pawn1, player2Pawn1, player2Rook1, player1Rook2, player1Pawn2, player1Pawn3, player1Pawn4, player1Pawn5, player1Pawn6, player1Pawn7, player1Pawn8, 
-		player2Pawn2, player2Pawn3, player2Pawn4, player2Pawn5, player2Pawn6, player2Pawn7, player2Pawn8, player2Knight1, player2Bishop1, player2Queen, player2King, player2Bishop2, player2Knight2, player2Rook2,
-		player1Knight1, player1Knight2, player1Bishop1, player1Bishop2, player1Queen, defaultBoardSquareDark, defaultBoardSquareLight]()
-	{		
-			std::vector<boardSquareStruct> boardSqaureIntializer;
-			int xPosistion = 0;
-			int yPosistion = startingYPostion;
-			int xPosistionCount = 1;
-			int yPoisitionCount = 1;
-			for (int i = 0; i < 64; i++) {
-
-				boardSquareStruct boardSquareStruct;
-				if (i == 0) {
-					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, startingYPostion));
-					boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, 0);
-					boardSquareStruct.numberXPosition = 1;
-					boardSquareStruct.numberYPosistion = 1;
-
-					setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook1, 1, 1);
-
-				}
-
-
-
-				else if (i % 8 == 0) {
-					yPosistion += boardSquareHeight;
-					boardSquareStruct.numberXPosition = 1;
-					xPosistionCount = 1;
-					yPoisitionCount += 1;
-					boardSquareStruct.numberYPosistion = yPoisitionCount;
-					xPosistion = 0;
-					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, yPosistion));
-					boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, yPosistion);
-					if (i == 8) {
-						boardSquareStruct.chessPieceId = player1Pawn1->id;
-						player1Pawn1->numberYPosition = 2;
-						player1Pawn1->numberXPosition = 1;
-					}
-
-					if (i == 48) {
-						setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn1, 1, 7, i);
-					}
-					if (i == 56) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Rook1, 1, 8, i);
-
-				}
-
-				else {
-					if (i == 7) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Rook2, 1, 7, i);
-					if (i == 9) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn2, 2, 2, i);
-					if (i == 10) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn3, 3, 2, i);
-					if (i == 11) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn4, 4, 2, i);
-					if (i == 12) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn5, 5, 2, i);
-					if (i == 13) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn6, 6, 2, i);
-					if (i == 14) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn7, 7, 2, i);
-					if (i == 15) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Pawn8, 8, 2, i);
-					if (i == 49) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn2, 2, 7, i);
-					if (i == 50) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn3, 3, 7, i);
-					if (i == 51) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn4, 4, 7, i);
-					if (i == 52) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn5, 5, 7, i);
-					if (i == 53) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn6, 6, 7, i);
-					if (i == 54) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn7, 7, 7, i);
-					if (i == 55) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Pawn8, 8, 7, i);
-					if (i == 57) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Knight1, 2, 8, i);
-					if (i == 58) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Bishop1, 3, 8, i);
-					if (i == 59) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Queen, 4, 8, i);
-					if (i == 60) setChessPieceBoardSquareAttributes(boardSquareStruct, player2King, 5, 8, i);
-					if (i == 61) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Bishop2, 6, 8, i);
-					if (i == 62) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Knight2, 7, 8, i);
-					if (i == 63) setChessPieceBoardSquareAttributes(boardSquareStruct, player2Rook2, 8, 8, i);
-
-
-
-
-					if (i == 1) {
-						setChessPieceBoardSquareAttributes(boardSquareStruct, player1Knight1, 2, 1, i);
-					}
-
-					if (i == 6) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Knight2, 7, 1, i);
-					if (i == 2) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Bishop1, 3, 1, i);
-					if (i == 5)setChessPieceBoardSquareAttributes(boardSquareStruct, player1Bishop2, 6, 1, i);
-					if (i == 3) setChessPieceBoardSquareAttributes(boardSquareStruct, player1Queen, 4, 1, i);
-					boardSquareStruct.numberXPosition = xPosistionCount + 1;
-					xPosistionCount += 1;
-					xPosistion += boardSquareWidth;
-					boardSquareStruct.numberYPosistion = yPoisitionCount;
-					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(xPosistion, yPosistion));
-					boardSquareStruct.boardSquarePosistion = sf::Vector2f(xPosistion, yPosistion);
-				}
-				boardSquareStruct.boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
-				if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareDark);
-				else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareLight);
-
-				else boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
-
-				 boardSqaureIntializer.push_back(boardSquareStruct);
-			}
-			return boardSqaureIntializer;
-	};
-	
-
-	if (!initialized) {
-		boardSquareAttributes = intializeChessBoard();
-	}
-	initialized = true;
 
 	std::vector<ChessPieceBase*> activeChessPieces = {
 			player1Pawn1,
@@ -238,6 +137,72 @@ int main() {
 		player2King,
 	};
 
+	auto intializeChessBoard = [player1Rook1, player1Pawn1, player2Pawn1, player2Rook1, player1Rook2, player1Pawn2, player1Pawn3, player1Pawn4, player1Pawn5, player1Pawn6, player1Pawn7, player1Pawn8, 
+		player2Pawn2, player2Pawn3, player2Pawn4, player2Pawn5, player2Pawn6, player2Pawn7, player2Pawn8, player2Knight1, player2Bishop1, player2Queen, player2King, player2Bishop2, player2Knight2, player2Rook2,
+		player1Knight1, player1Knight2, player1Bishop1, player1Bishop2, player1Queen, defaultBoardSquareDark, defaultBoardSquareLight, activeChessPieces]()
+	{		
+			std::vector<boardSquareStruct> boardSqaureIntializer;
+			int xPosistion = 0;
+			int yPosistion = startingYPostion;
+			int xPosistionCount = 1;
+			int yPoisitionCount = 1;
+			for (int i = 0; i < 64; i++) {
+
+				boardSquareStruct boardSquareStruct;
+	
+				if (i == 0) {
+					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, startingYPostion));
+					boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, 0);
+					boardSquareStruct.numberXPosition = 1;
+					boardSquareStruct.numberYPosistion = 1;
+				}
+
+
+
+				else if (i % 8 == 0) {
+					yPosistion += boardSquareHeight;
+					boardSquareStruct.numberXPosition = 1;
+					xPosistionCount = 1;
+					yPoisitionCount += 1;
+					boardSquareStruct.numberYPosistion = yPoisitionCount;
+					xPosistion = 0;
+					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(0, yPosistion));
+					boardSquareStruct.boardSquarePosistion = sf::Vector2f(0, yPosistion);
+				}
+
+				else {
+					boardSquareStruct.numberXPosition = xPosistionCount + 1;
+					xPosistionCount += 1;
+					xPosistion += boardSquareWidth;
+					boardSquareStruct.numberYPosistion = yPoisitionCount;
+					boardSquareStruct.boardSquare.setPosition(sf::Vector2f(xPosistion, yPosistion));
+					boardSquareStruct.boardSquarePosistion = sf::Vector2f(xPosistion, yPosistion);
+				}
+				auto currentChessPieceIndex = std::find_if(activeChessPieces.begin(), activeChessPieces.end(), [&i](ChessPieceBase* currentChessPiece) {return currentChessPiece->startingBoardSquareIndex == i; });
+				if (currentChessPieceIndex != activeChessPieces.end()) {
+					auto index = std::distance(activeChessPieces.begin(), currentChessPieceIndex);
+					activeChessPieces[index]->setChessPieceAttributes(i, boardSquareStruct);
+				}
+				else {
+					activeChessPieces[activeChessPieces.size() - 1]->setChessPieceAttributes(i, boardSquareStruct);
+				}
+				boardSquareStruct.boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
+				if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareDark);
+				else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareLight);
+
+				else boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
+
+				 boardSqaureIntializer.push_back(boardSquareStruct);
+			}
+			return boardSqaureIntializer;
+	};
+	
+
+	if (!initialized) {
+		boardSquareAttributes = intializeChessBoard();
+	}
+	initialized = true;
+
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
@@ -267,7 +232,7 @@ int main() {
 										ChessPieceBase* currentChessPiece = activeChessPieces[i];
 
 										if (currentChessPiece->chessPieceType == "Pawn" && currentChessPiece->isChessPieceActive && currentChessPiece->pawnHasReachedEnd) {
-											ChessPieceBase* newBishopPlayer1 = new Bishop("player1NewBishop", currentChessPiece->posistion, "images/player1Bishop.png", currentChessPiece->player, "Bishop");
+											ChessPieceBase* newBishopPlayer1 = new Bishop("player1NewBishop", currentChessPiece->posistion, "images/player1Bishop.png", currentChessPiece->player, "Bishop", currentChessPiece->startingIndexes, currentChessPiece->boardSquareIndex);
 											newBishopPlayer1->numberXPosition = currentChessPiece->numberXPosition;
 											newBishopPlayer1->numberYPosition = currentChessPiece->numberYPosition;
 											boardSquareAttributes[currentChessPiece->boardSquareIndex].chessPieceId = newBishopPlayer1->id;
@@ -302,8 +267,9 @@ int main() {
 							sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
 							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
 							if (clickedOnObject(boardSquarePosistion, sf::Vector2f(boardSquareWidth, boardSquareHeight), sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
-					
+						
 								if (!currentBoardSquareStruct.chessPieceId.empty() && currentBoardSquareStruct.chessPieceId.size() > 0) {
+									logger(currentBoardSquareStruct.chessPieceId);
 									logger("found chess piece");
 									std::cout << currentPlayerTurn << std::endl;
 										for (ChessPieceBase* activeChessPiece : activeChessPieces) {
@@ -342,7 +308,9 @@ int main() {
 								if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), 
 									currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, currentChessPiece != nullptr ? currentChessPiece->player : 0, boardSquareAttributes)) {
 									//Check if we try to take our own chess piece
+									logger("can move position");
 									if (currentBoardSquareStruct.chessPieceId.size() > 0 && currentlySelectedChessPiece.selectedChessPiece->player == currentChessPiece->player) {
+										logger(currentBoardSquareStruct.chessPieceId);
 										currentlySelectedChessPiece.selectedChessPiece = nullptr;
 										currentlySelectedChessPiece.isCurrentlySelected = false;
 										continue;
@@ -368,12 +336,13 @@ int main() {
 									currentChessPiece->numberXPosition = currentBoardSquareStruct.numberXPosition;
 									currentChessPiece->numberYPosition = currentBoardSquareStruct.numberYPosistion;
 
+									logger("right before move");
+
 									sf::Vector2f moveCoordinates = sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2));
 									currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
 									currentPlayerTurn = currentPlayerTurn == 1 ? 2 : 1;
 										
 									currentlySelectedChessPiece.isCurrentlySelected = false;
-									currentlySelectedChessPiece.selectedChessPiece = nullptr;
 									currentlySelectedChessPiece.canDeleteSelected = true;
 								;
 
@@ -423,6 +392,7 @@ int main() {
 										embeddedBoardSquareStruct.boardSquare.setFillColor(currentlySelectedChessPiece.selectedDefaultColor);
 										currentlySelectedChessPiece.selectedIndex = sf::Vector2f(0, 0);
 										currentlySelectedChessPiece.canDeleteSelected = false;
+										currentlySelectedChessPiece.selectedChessPiece = nullptr;
 									}
 								};
 						}

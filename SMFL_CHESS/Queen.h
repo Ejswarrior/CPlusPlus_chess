@@ -10,17 +10,20 @@ public:
         sf::Vector2f startingPosistion,
         std::string assetName,
         int player,
-        std::string chessPieceType) : ChessPieceBase(id,
-        startingPosistion,
-        assetName,
-        player,
-        chessPieceType) {
+        std::string chessPieceType, sf::Vector2f startingIndexes, int startingBoardSquareIndex) : ChessPieceBase(id,
+            startingPosistion,
+            assetName,
+            player,
+            chessPieceType, startingIndexes, startingBoardSquareIndex) {
         (*this).id = id;
         (*this).startingPosistion = startingPosistion;
         (*this).assetName = assetName;
         (*this).player = player;
         (*this).chessPieceType = chessPieceType;
+        (*this).startingIndexes = startingIndexes;
+        (*this).startingBoardSquareIndex = startingBoardSquareIndex;
     }
+
     bool canMovePosistions(sf::Vector2f newPosistion, int numberXPosition, int numberYPosition, int playerType, std::vector<boardSquareStruct> boardSquareAttributes) override {
 
         int xDifference = numberXPosition - (*this).numberXPosition;

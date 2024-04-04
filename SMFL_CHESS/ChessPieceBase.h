@@ -22,7 +22,7 @@ public:
 		sf::Vector2f startingPosistion,
 		std::string assetName,
 		int player = 1,
-		std::string chessPieceType = "", sf::Vector2f startingIndexes, int startingBoardSquareIndex) {
+		std::string chessPieceType = "", sf::Vector2f startingIndexes = sf::Vector2f(0,0), int startingBoardSquareIndex = 0) {
 		id = id;
 		startingPosistion = sf::Vector2f(startingPosistion.x, startingPosistion.y + 75);  // We add 75 to move eveything down
 		assetName = assetName;
@@ -51,11 +51,11 @@ public:
 	bool pawnHasReachedEnd = false;
 	int boardSquareIndex = 0;
 
-	void setChessPieceAttributes(int index, boardSquareStruct boardSquare, int newNumberXPosition, int newNumberYPosition) {
+	void setChessPieceAttributes(int index, boardSquareStruct &boardSquare) {
 		if (index == startingBoardSquareIndex) {
 			boardSquare.chessPieceId = id;
-			numberYPosition = newNumberYPosition;
-			numberXPosition = newNumberXPosition;
+			numberYPosition = startingIndexes.y;
+			numberXPosition = startingIndexes.x;
 			boardSquareIndex = index;
 		}
 	}
