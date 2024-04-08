@@ -18,13 +18,6 @@
 #include <iterator>
 
 
-void setChessPieceBoardSquareAttributes(boardSquareStruct &boardSquare, ChessPieceBase* chessPiece, int numberXPosition, int numberYPosition, int index) {
-	boardSquare.chessPieceId = chessPiece->id;
-	chessPiece->numberYPosition = numberYPosition;
-	chessPiece->numberXPosition = numberXPosition;
-	chessPiece->boardSquareIndex = index;
-}
-
 void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
 	for (ChessPieceBase* chessPiece : activeChessPieces) {
 		chessPiece->baseChessPiece.setPosition(sf::Vector2f(chessPiece->startingPosistion.x, chessPiece->startingPosistion.y + 75));

@@ -37,18 +37,22 @@ class Bishop:
                 if (boardSquareYDifference < 0) boardSquareYDifference = boardSquareYDifference * -1;
         
                 if (numberXPosition < (*this).numberXPosition &&  boardSquare.chessPieceId.size() > 0 && boardSquareYDifference != 0 && boardSquareXDifference != 0 && boardSquareYDifference == boardSquareXDifference && (*this).numberXPosition > boardSquare.numberXPosition) {
-          
+                    std::cout << boardSquare.chessPieceId << std::endl;
                     return false;
                 }
                 else if (numberYPosition < (*this).numberYPosition && boardSquare.chessPieceId.size() > 0 && boardSquareYDifference != 0 && boardSquareXDifference != 0 && boardSquareYDifference == boardSquareXDifference && (*this).numberYPosition > boardSquare.numberYPosistion) {
-             
+                    std::cout << boardSquare.chessPieceId << std::endl;
+
                     return false;
                 }
                 else if (numberYPosition < (*this).numberYPosition && boardSquare.chessPieceId.size() > 0 && boardSquareYDifference != 0 && boardSquareXDifference != 0 && boardSquareYDifference == boardSquareXDifference && (*this).numberYPosition > boardSquare.numberYPosistion) {
-            
+                    std::cout << boardSquare.chessPieceId << std::endl;
+
                     return false;
                 }
                 else if (numberXPosition > (*this).numberXPosition && boardSquare.chessPieceId.size() > 0 && boardSquareYDifference != 0 && boardSquareXDifference != 0 && boardSquareYDifference == boardSquareXDifference && (*this).numberXPosition < boardSquare.numberXPosition) {
+                    std::cout << boardSquare.chessPieceId << std::endl;
+
                     return false;
                 }
 
