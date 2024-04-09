@@ -77,6 +77,7 @@ public:
 				pawnHasReachedEnd = true;
 			}
 		}
+
 		numberXPosition = newXposition;
 		numberYPosition = newYposition;
 		baseChessPiece.setPosition(newPosistion);

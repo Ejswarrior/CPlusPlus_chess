@@ -335,6 +335,10 @@ int main() {
 
 									sf::Vector2f moveCoordinates = sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2));
 									currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
+									ChessPieceBase* opposingPlayerKing = currentChessPiece->player == 1 ? player2King : player1King;
+									if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(currentlySelectedChessPiece.selectedChessPiece->numberXPosition, currentlySelectedChessPiece.selectedChessPiece->numberYPosition), opposingPlayerKing->numberXPosition, opposingPlayerKing->numberYPosition, currentlySelectedChessPiece.selectedChessPiece->player, boardSquareAttributes)) {
+										boardSquareAttributes.at(opposingPlayerKing->boardSquareIndex).boardSquare.setFillColor(sf::Color::Red);
+									}
 									currentPlayerTurn = currentPlayerTurn == 1 ? 2 : 1;
 									if (hasPawnReachedEnd) logger("reached end");
 									currentlySelectedChessPiece.isCurrentlySelected = false;
