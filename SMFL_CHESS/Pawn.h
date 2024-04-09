@@ -37,7 +37,7 @@ public:
         int totalMoves = numberOfMoves == 0 ? 2 : 1;
         if ((*this).player == 1) 
         {
-            if ((*this).numberYPosition < numberYPosition && numberYPosition <= (*this).numberYPosition + totalMoves && numberXPosition == (*this).numberXPosition && playerType == 0 || playerType != (*this).player && numberXPosition == (*this).numberXPosition + 1) {
+            if ((*this).numberYPosition < numberYPosition && numberYPosition <= (*this).numberYPosition + totalMoves && numberXPosition == (*this).numberXPosition && playerType == 0 || playerType != (*this).player && (numberXPosition == (*this).numberXPosition + 1 || numberXPosition == (*this).numberXPosition - 1) && (*this).numberYPosition + 1 == numberYPosition) {
                 numberOfMoves == 0 && numberOfMoves++;
                 return true;
             }
@@ -46,7 +46,7 @@ public:
 
         else if ((*this).player == 2) 
         {
-            if ((*this).numberYPosition > numberYPosition && numberYPosition >= (*this).numberYPosition - totalMoves && numberXPosition == (*this).numberXPosition  || playerType != (*this).player && numberXPosition == (*this).numberXPosition + 1 || numberXPosition == (*this).numberXPosition - 1) {
+            if ((*this).numberYPosition > numberYPosition && numberYPosition >= (*this).numberYPosition - totalMoves && numberXPosition == (*this).numberXPosition || playerType != (*this).player && (numberXPosition == (*this).numberXPosition + 1 || numberXPosition == (*this).numberXPosition - 1) && (*this).numberYPosition -1 == numberYPosition) {
                 numberOfMoves == 0 && numberOfMoves++;
                 return true;
             }

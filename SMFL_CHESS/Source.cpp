@@ -20,6 +20,7 @@
 
 void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
 	for (ChessPieceBase* chessPiece : activeChessPieces) {
+		if (!chessPiece->isChessPieceActive) chessPiece->isChessPieceActive = true;
 		chessPiece->baseChessPiece.setPosition(sf::Vector2f(chessPiece->startingPosistion.x, chessPiece->startingPosistion.y + 75));
 	}
 }
@@ -225,7 +226,7 @@ int main() {
 										ChessPieceBase* currentChessPiece = activeChessPieces[i];
 
 										if (currentChessPiece->chessPieceType == "Pawn" && currentChessPiece->isChessPieceActive && currentChessPiece->pawnHasReachedEnd) {
-											ChessPieceBase* newBishopPlayer1 = new Bishop("player1NewBishop", currentChessPiece->posistion, "images/player1Bishop.png", currentChessPiece->player, "Bishop", currentChessPiece->startingIndexes, currentChessPiece->boardSquareIndex);
+											ChessPieceBase* newBishopPlayer1 = new Bishop("player1NewBishop", sf::Vector2f(currentChessPiece->posistion.x, currentChessPiece->player == 2 ? currentChessPiece->posistion.y - startingYPostion : currentChessPiece->posistion.y + startingYPostion), "images/player1Bishop.png", currentChessPiece->player, "Bishop", currentChessPiece->startingIndexes, currentChessPiece->boardSquareIndex);
 											newBishopPlayer1->numberXPosition = currentChessPiece->numberXPosition;
 											newBishopPlayer1->numberYPosition = currentChessPiece->numberYPosition;
 											boardSquareAttributes[currentChessPiece->boardSquareIndex].chessPieceId = newBishopPlayer1->id;
@@ -244,6 +245,7 @@ int main() {
 									logger("Knight");
 									break;
 								}
+								hasPawnReachedEnd = false;
 							};
 						}
 					}
@@ -315,7 +317,7 @@ int main() {
 											menuWin.player = currentlySelectedChessPiece.selectedChessPiece->player;
 											hasAPlayerWon.isKingTaken = true;
 											hasAPlayerWon.whichPlayerWon = currentlySelectedChessPiece.selectedChessPiece->player;
-											break;
+											continue;
 										}
 										currentChessPiece->isChessPieceActive = false;
 									}
@@ -334,7 +336,7 @@ int main() {
 									sf::Vector2f moveCoordinates = sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2));
 									currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
 									currentPlayerTurn = currentPlayerTurn == 1 ? 2 : 1;
-										
+									if (hasPawnReachedEnd) logger("reached end");
 									currentlySelectedChessPiece.isCurrentlySelected = false;
 									currentlySelectedChessPiece.canDeleteSelected = true;
 								;
