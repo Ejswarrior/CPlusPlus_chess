@@ -34,17 +34,20 @@ bool clickedOnObject(sf::Vector2f objectPosition, sf::Vector2f objectSize, sf::V
 
 }
 
-void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPieceBase* opposingPlayer2King, std::vector<ChessPieceBase*> activeChessPieces, std::vector<boardSquareStruct>& boardSquareAttributes) {
-	boardSquareStruct& king1Board = boardSquareAttributes.at(opposingPlayer1King->boardSquareIndex);
-	boardSquareStruct& king2Board = boardSquareAttributes.at(opposingPlayer2King->boardSquareIndex);
-
+void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPieceBase* opposingPlayer2King, std::vector<ChessPieceBase*> activeChessPieces, std::vector<boardSquareStruct>& boardSquareAttributes, std::string chessPieceType, int originalIndex ) {
+	boardSquareStruct& king1Board = boardSquareAttributes.at(chessPieceType == "King"  ?  originalIndex : opposingPlayer1King->boardSquareIndex);
+	boardSquareStruct& king2Board = boardSquareAttributes.at(chessPieceType == "King" ? originalIndex : opposingPlayer2King->boardSquareIndex);
+	std::cout << originalIndex << std::endl;
+	std::cout << "before orig" << std::endl;
+	std::cout << (opposingPlayer2King->getIsKingInCheckMate() ? "true" : "false") << std::endl;
 	if (opposingPlayer1King->getIsKingInCheckMate()) {
 		opposingPlayer1King->setIsKingInCheckmate(false);
-		king1Board.boardSquare.setFillColor(opposingPlayer1King->getKingBoardColor());
+		king1Board.boardSquare.setFillColor(sf::Color::Blue);
 	}
 	if (opposingPlayer2King->getIsKingInCheckMate()) {
+		std::cout << "hit true check 2" << std::endl;
 		opposingPlayer2King->setIsKingInCheckmate(false);
-		king2Board.boardSquare.setFillColor(opposingPlayer2King->getKingBoardColor());
+		king2Board.boardSquare.setFillColor(sf::Color::Blue);
 	}
 
 	for (int i = 0; i < activeChessPieces.size(); i++) {
@@ -357,8 +360,8 @@ int main() {
 										}
 										currentChessPiece->isChessPieceActive = false;
 									}
-
 									currentChessPiece = currentlySelectedChessPiece.selectedChessPiece;
+									int originalIndex = currentlySelectedChessPiece.selectedChessPiece->boardSquareIndex;
 									currentChessPiece->boardSquareIndex = i;
 
 									currentBoardSquareStruct.chessPieceId = currentChessPiece->id;
@@ -369,7 +372,7 @@ int main() {
 
 									sf::Vector2f moveCoordinates = sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2));
 									currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
-									checkForCheckMate(currentChessPiece->player == 1 ? 2 : 1, player1King, player2King, activeChessPieces, boardSquareAttributes);
+									checkForCheckMate(currentChessPiece->player, player1King, player2King, activeChessPieces, boardSquareAttributes, currentChessPiece->chessPieceType, originalIndex);
 									currentPlayerTurn = currentPlayerTurn == 1 ? 2 : 1;
 									if (hasPawnReachedEnd) logger("reached end");
 									currentlySelectedChessPiece.isCurrentlySelected = false;

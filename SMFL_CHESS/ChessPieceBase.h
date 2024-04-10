@@ -82,13 +82,11 @@ public:
 		return false;
 	};
 
-
 	void move(sf::Vector2f newPosistion, sf::Vector2f gridPositions, bool& didReachEnd, int newXposition, int newYposition) {
 		posistion = newPosistion;
 
 
 		if (chessPieceType == "Pawn") {
-			//TODO: Need to create UI to promote pawn to another chess piece
 			if (player == 1 && gridPositions.y == 8  || player == 2 && gridPositions.y == 1 ) {
 				std::cout << gridPositions.y << std::endl;
 				didReachEnd = true;
