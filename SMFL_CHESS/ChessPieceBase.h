@@ -7,7 +7,9 @@
 class ChessPieceBase
 {
 private: 
-	
+	bool isKingInCheckMate = false;
+	sf::Color kingBoardColor;
+
 
 public:
 	std::string id = "";
@@ -51,6 +53,21 @@ public:
 	bool pawnHasReachedEnd = false;
 	int boardSquareIndex = 0;
 
+	void setIsKingInCheckmate(bool taken) {
+		isKingInCheckMate = taken;
+	}
+	sf::Color getKingBoardColor() {
+		return kingBoardColor;
+	}
+
+	void setKingBoardColor(sf::Color newColor) {
+		kingBoardColor = newColor;
+	}
+
+	bool getIsKingInCheckMate() {
+		return isKingInCheckMate;
+	}
+
 	void setChessPieceAttributes(int index, boardSquareStruct &boardSquare) {
 		if (index == startingBoardSquareIndex) {
 			boardSquare.chessPieceId = id;
@@ -64,6 +81,7 @@ public:
 		std::cout << "hit base" << std::endl;
 		return false;
 	};
+
 
 	void move(sf::Vector2f newPosistion, sf::Vector2f gridPositions, bool& didReachEnd, int newXposition, int newYposition) {
 		posistion = newPosistion;
