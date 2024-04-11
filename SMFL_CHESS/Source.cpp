@@ -37,18 +37,12 @@ bool clickedOnObject(sf::Vector2f objectPosition, sf::Vector2f objectSize, sf::V
 void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPieceBase* opposingPlayer2King, std::vector<ChessPieceBase*> activeChessPieces, std::vector<boardSquareStruct>& boardSquareAttributes, std::string chessPieceType, int originalIndex ) {
 	boardSquareStruct& king1Board = boardSquareAttributes.at(chessPieceType == "King"  ?  originalIndex : opposingPlayer1King->boardSquareIndex);
 	boardSquareStruct& king2Board = boardSquareAttributes.at(chessPieceType == "King" ? originalIndex : opposingPlayer2King->boardSquareIndex);
-	logger(king2Board.numberXPosition);
-	logger(king2Board.numberYPosistion);
-	std::cout << "before orig" << std::endl;
-	std::cout << (opposingPlayer2King->getIsKingInCheckMate() ? "true" : "false") << std::endl;
+
 	if (opposingPlayer1King->getIsKingInCheckMate()) {
-		logger("hit true check 1");
 		opposingPlayer1King->setIsKingInCheckmate(false);
 		king1Board.boardSquare.setFillColor(king1Board.defaultBoardColor);
 	}
 	if (opposingPlayer2King->getIsKingInCheckMate()) {
-		std::cout << "hit true check 2" << std::endl;
-		logger(originalIndex);
 		king2Board.boardSquare.setFillColor(king2Board.defaultBoardColor);
 		opposingPlayer2King->setIsKingInCheckmate(false);
 	}
@@ -58,21 +52,14 @@ void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPie
 
 		if (currentChesspiece->player == 2) {
 			if (currentChesspiece->canMovePosistions(sf::Vector2f(currentChesspiece->numberXPosition, currentChesspiece->numberYPosition), opposingPlayer1King->numberXPosition, opposingPlayer1King->numberYPosition, currentChesspiece->player, boardSquareAttributes)) {
-				std::cout << "hit this things" << std::endl;
-				opposingPlayer1King->setKingBoardColor(king1Board.boardSquare.getFillColor());
 				opposingPlayer1King->setIsKingInCheckmate(true);
-
 				boardSquareAttributes.at(opposingPlayer1King->boardSquareIndex).boardSquare.setFillColor(sf::Color::Red);
 			}
 		}
 
 		else if (currentChesspiece->player == 1) {
 			if (currentChesspiece->canMovePosistions(sf::Vector2f(currentChesspiece->numberXPosition, currentChesspiece->numberYPosition), opposingPlayer2King->numberXPosition, opposingPlayer2King->numberYPosition, currentChesspiece->player, boardSquareAttributes)) {
-				std::cout << "hit this things but 2" << std::endl;
-
-				opposingPlayer2King->setKingBoardColor(king2Board.boardSquare.getFillColor());
 				opposingPlayer2King->setIsKingInCheckmate(true);
-
 				boardSquareAttributes.at(opposingPlayer2King->boardSquareIndex).boardSquare.setFillColor(sf::Color::Red);
 			}
 		}
@@ -261,8 +248,6 @@ int main() {
 
 			if (event.type == sf::Event::MouseButtonPressed)
 			{
-
-
 				if (event.mouseButton.button == sf::Mouse::Left) 
 				{	
 					if (hasPawnReachedEnd) {

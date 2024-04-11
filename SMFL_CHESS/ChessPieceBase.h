@@ -8,8 +8,6 @@ class ChessPieceBase
 {
 private: 
 	bool isKingInCheckMate = false;
-	sf::Color kingBoardColor;
-
 
 public:
 	std::string id = "";
@@ -55,13 +53,6 @@ public:
 
 	void setIsKingInCheckmate(bool taken) {
 		isKingInCheckMate = taken;
-	}
-	sf::Color getKingBoardColor() {
-		return kingBoardColor;
-	}
-
-	void setKingBoardColor(sf::Color newColor) {
-		kingBoardColor = newColor;
 	}
 
 	bool getIsKingInCheckMate() {
