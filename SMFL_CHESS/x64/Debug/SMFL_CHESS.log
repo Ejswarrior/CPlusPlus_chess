@@ -1,2 +1,9 @@
-﻿  Source.cpp
+﻿  Bishop.cpp
+  King.cpp
+  Knight.cpp
+  Pawn.cpp
+  Queen.cpp
+  Rook.cpp
+  Source.cpp
+  Generating Code...
   SMFL_CHESS.vcxproj -> C:\Users\Erik\source\repos\SMLF_CHESS\x64\Debug\SMFL_CHESS.exe

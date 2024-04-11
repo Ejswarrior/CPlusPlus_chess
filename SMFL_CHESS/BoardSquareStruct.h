@@ -8,4 +8,5 @@ struct boardSquareStruct {
 	int numberYPosistion;
 	sf::Vector2f boardSquarePosistion;
 	std::string chessPieceId;
+	sf::Color defaultBoardColor;
 };

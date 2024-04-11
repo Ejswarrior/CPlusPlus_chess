@@ -37,17 +37,20 @@ bool clickedOnObject(sf::Vector2f objectPosition, sf::Vector2f objectSize, sf::V
 void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPieceBase* opposingPlayer2King, std::vector<ChessPieceBase*> activeChessPieces, std::vector<boardSquareStruct>& boardSquareAttributes, std::string chessPieceType, int originalIndex ) {
 	boardSquareStruct& king1Board = boardSquareAttributes.at(chessPieceType == "King"  ?  originalIndex : opposingPlayer1King->boardSquareIndex);
 	boardSquareStruct& king2Board = boardSquareAttributes.at(chessPieceType == "King" ? originalIndex : opposingPlayer2King->boardSquareIndex);
-	std::cout << originalIndex << std::endl;
+	logger(king2Board.numberXPosition);
+	logger(king2Board.numberYPosistion);
 	std::cout << "before orig" << std::endl;
 	std::cout << (opposingPlayer2King->getIsKingInCheckMate() ? "true" : "false") << std::endl;
 	if (opposingPlayer1King->getIsKingInCheckMate()) {
+		logger("hit true check 1");
 		opposingPlayer1King->setIsKingInCheckmate(false);
-		king1Board.boardSquare.setFillColor(sf::Color::Blue);
+		king1Board.boardSquare.setFillColor(king1Board.defaultBoardColor);
 	}
 	if (opposingPlayer2King->getIsKingInCheckMate()) {
 		std::cout << "hit true check 2" << std::endl;
+		logger(originalIndex);
+		king2Board.boardSquare.setFillColor(king2Board.defaultBoardColor);
 		opposingPlayer2King->setIsKingInCheckmate(false);
-		king2Board.boardSquare.setFillColor(sf::Color::Blue);
 	}
 
 	for (int i = 0; i < activeChessPieces.size(); i++) {
@@ -55,7 +58,7 @@ void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPie
 
 		if (currentChesspiece->player == 2) {
 			if (currentChesspiece->canMovePosistions(sf::Vector2f(currentChesspiece->numberXPosition, currentChesspiece->numberYPosition), opposingPlayer1King->numberXPosition, opposingPlayer1King->numberYPosition, currentChesspiece->player, boardSquareAttributes)) {
-
+				std::cout << "hit this things" << std::endl;
 				opposingPlayer1King->setKingBoardColor(king1Board.boardSquare.getFillColor());
 				opposingPlayer1King->setIsKingInCheckmate(true);
 
@@ -65,6 +68,7 @@ void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPie
 
 		else if (currentChesspiece->player == 1) {
 			if (currentChesspiece->canMovePosistions(sf::Vector2f(currentChesspiece->numberXPosition, currentChesspiece->numberYPosition), opposingPlayer2King->numberXPosition, opposingPlayer2King->numberYPosition, currentChesspiece->player, boardSquareAttributes)) {
+				std::cout << "hit this things but 2" << std::endl;
 
 				opposingPlayer2King->setKingBoardColor(king2Board.boardSquare.getFillColor());
 				opposingPlayer2King->setIsKingInCheckmate(true);
@@ -222,8 +226,15 @@ int main() {
 					activeChessPieces[activeChessPieces.size() - 1]->setChessPieceAttributes(i, boardSquareStruct);
 				}
 				boardSquareStruct.boardSquare.setSize(sf::Vector2f(boardSquareWidth, boardSquareHeight));
-				if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareDark);
-				else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareLight);
+				if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 == 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 > 0) {
+					boardSquareStruct.defaultBoardColor = defaultBoardSquareDark;
+
+					boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareDark);
+				}
+				else if (i % 2 == 0 && yPosistion / boardSquareHeight % 2 > 0 || i % 2 > 0 && yPosistion / boardSquareHeight % 2 == 0) {
+					boardSquareStruct.defaultBoardColor = defaultBoardSquareLight;
+					boardSquareStruct.boardSquare.setFillColor(defaultBoardSquareLight);
+				}
 
 				else boardSquareStruct.boardSquare.setFillColor(sf::Color::White);
 
@@ -401,7 +412,7 @@ int main() {
 									}
 								};
 								if (currentChessPiece != nullptr && embeddedBoardSquareStruct.numberXPosition == currentlySelectedChessPiece.selectedIndex.x && embeddedBoardSquareStruct.numberYPosistion == currentlySelectedChessPiece.selectedIndex.y) {
-									embeddedBoardSquareStruct.boardSquare.setFillColor(currentlySelectedChessPiece.selectedDefaultColor);
+									embeddedBoardSquareStruct.boardSquare.setFillColor(embeddedBoardSquareStruct.defaultBoardColor);
 								}
 
 							}
@@ -422,7 +433,7 @@ int main() {
 
 									if (currentChessPiece != nullptr && embeddedBoardSquareStruct.numberXPosition == currentlySelectedChessPiece.selectedIndex.x && embeddedBoardSquareStruct.numberYPosistion == currentlySelectedChessPiece.selectedIndex.y) {
 										embeddedBoardSquareStruct.chessPieceId.clear();
-										embeddedBoardSquareStruct.boardSquare.setFillColor(currentlySelectedChessPiece.selectedDefaultColor);
+										embeddedBoardSquareStruct.boardSquare.setFillColor(embeddedBoardSquareStruct.defaultBoardColor);
 										currentlySelectedChessPiece.selectedIndex = sf::Vector2f(0, 0);
 										currentlySelectedChessPiece.canDeleteSelected = false;
 										currentlySelectedChessPiece.selectedChessPiece = nullptr;
