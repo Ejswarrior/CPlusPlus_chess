@@ -3,11 +3,16 @@
 #include <vector>
 #include <iostream>
 #include "BoardSquareStruct.h"
+#include <SFML/Audio.hpp>
+
 #include "ChessPieceMoves.h"
 class ChessPieceBase
 {
 private: 
 	bool isKingInCheckMate = false;
+	sf::SoundBuffer buffer;
+	sf::Sound sound;
+
 
 public:
 	std::string id = "";
@@ -34,6 +39,8 @@ public:
 		baseChessPiece.setTexture(texture);
 		baseChessPiece.setScale(sf::Vector2f(chessPieceWidth / baseChessPiece.getLocalBounds().width, chessPieceHeight / baseChessPiece.getLocalBounds().height));
 		baseChessPiece.setPosition(startingPosistion);
+		buffer.loadFromFile("sounds/chessPieceMove.wav");
+		sound.setBuffer(buffer);
 		sf::Vector2f scale = baseChessPiece.getScale();
 	}
 	
@@ -88,6 +95,7 @@ public:
 		numberXPosition = newXposition;
 		numberYPosition = newYposition;
 		baseChessPiece.setPosition(newPosistion);
+		sound.play();
 	}
 
 
