@@ -4,8 +4,8 @@
 #include <iostream>
 #include "BoardSquareStruct.h"
 #include <SFML/Audio.hpp>
-
 #include "ChessPieceMoves.h"
+
 class ChessPieceBase
 {
 private: 

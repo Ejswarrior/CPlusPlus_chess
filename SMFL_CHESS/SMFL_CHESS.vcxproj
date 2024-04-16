@@ -157,6 +157,7 @@
     <ClCompile Include="ChessPieceMoves.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
+    <ClCompile Include="MultipleSocket.cpp" />
     <ClCompile Include="Queen.cpp" />
     <ClCompile Include="Rook.cpp" />
     <ClCompile Include="Pawn.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="ChessPieceMoves.h" />
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
+    <ClInclude Include="MultipleSocket.h" />
     <ClInclude Include="Queen.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="ChessPieceBase.h" />
