@@ -8,7 +8,6 @@
 
 class ChessPieceBase
 {
-private: 
 	bool isKingInCheckMate = false;
 	sf::SoundBuffer buffer;
 	sf::Sound sound;

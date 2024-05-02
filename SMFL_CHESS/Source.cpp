@@ -16,6 +16,7 @@
 #include "SelectChessPieceMenu.h"
 #include <algorithm>
 #include <iterator>
+#include "MultipleSocket.h"
 
 
 void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
@@ -81,6 +82,7 @@ int main() {
 	std::vector<sf::RectangleShape> boardSquares;
 	std::vector<boardSquareStruct> boardSquareAttributes;
 	playerHasWonStruct hasAPlayerWon;
+	
 	bool initialized = false;
 	bool hasPawnReachedEnd = false;
 	int currentPlayerTurn = 1;
@@ -88,6 +90,12 @@ int main() {
 	ChessPieceMoves chessPieceMoves;
 	Topbar topbar;
 	SelectChessPieceMenu chessPieceMenu;
+	MultipleSocket serverSocket;
+
+	serverSocket.intializeSocket("127.0.0.1", 8910);
+
+	serverSocket.sendData();
+
 
 	//Todo: Find a better way to initialize all the Chess pieces
 
