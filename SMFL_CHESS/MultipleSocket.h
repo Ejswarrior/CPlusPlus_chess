@@ -24,13 +24,11 @@ public:
 	}
 
 	void sendData() {
-		std::string data = "Hello";
+		char data[100] = "H";
 
-		sf::Packet packet;
 
-		packet >> data;
 
-		if (socket.send(packet) != sf::Socket::Done) {
+		if (socket.send(data, 100) != sf::Socket::Done) {
 			std::cout << "Data sent successfully" << std::endl;
 			return;
 

@@ -91,11 +91,7 @@ int main() {
 	Topbar topbar;
 	SelectChessPieceMenu chessPieceMenu;
 	MultipleSocket serverSocket;
-
 	serverSocket.intializeSocket("127.0.0.1", 8910);
-
-	serverSocket.sendData();
-
 
 	//Todo: Find a better way to initialize all the Chess pieces
 
@@ -297,9 +293,10 @@ int main() {
 
 
 					if (clickedOnObject(topbar.resetButtonPosistion, topbar.resetButtonSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
-						resetGame(activeChessPieces);
+						serverSocket.sendData();
+						/*resetGame(activeChessPieces);
 						boardSquareAttributes.clear();
-						boardSquareAttributes = intializeChessBoard();
+						boardSquareAttributes = intializeChessBoard();*/
 					}
 					//Select the Chess Piece
 					if (!currentlySelectedChessPiece.isCurrentlySelected) {
