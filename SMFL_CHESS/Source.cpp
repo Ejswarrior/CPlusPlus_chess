@@ -294,6 +294,7 @@ int main() {
 
 					if (clickedOnObject(topbar.resetButtonPosistion, topbar.resetButtonSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
 						serverSocket.sendData();
+						serverSocket.recieveData();
 						/*resetGame(activeChessPieces);
 						boardSquareAttributes.clear();
 						boardSquareAttributes = intializeChessBoard();*/
