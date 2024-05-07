@@ -1,6 +1,8 @@
 #pragma once
 #include <SFML/Network.hpp>
 #include <iostream>
+#include <vector>
+#include "BoardSquareStruct.h"
 
 class MultipleSocket
 {
@@ -21,14 +23,26 @@ public:
 
 	}
 
-	void sendData() {
-		std::string s = "hello";
+	void sendData(std::vector<boardSquareStruct> boardSquareAttributes) {
 		sf::Packet packet;
-		packet << s;
+
+	/*	for (boardSquareStruct& currentBoardSquareStruct : boardSquareAttributes) {
+			packet << currentBoardSquareStruct.chessPieceId << currentBoardSquareStruct.numberXPosition << currentBoardSquareStruct.numberYPosistion;
+			packet << currentBoardSquareStruct.boardSquarePosistion.x << currentBoardSquareStruct.boardSquarePosistion.y;
+		}*/
+		boardSquareStruct moveValue = boardSquareAttributes.at(0);
 
 
+		struct moveData {
+			std::string chessPieceId;
+			int numberXposition;
+			int numberYposition;
+		};
 
-		if (socket.send(packet) != sf::Socket::Done) {
+		moveData data = { moveValue.chessPieceId, moveValue.numberXPosition, moveValue.numberYPosistion };
+	
+
+		if (socket.send((char*)&data, sizeof(data)) != sf::Socket::Done) {
 			std::cout << "Data sent unsuccessfully" << std::endl;
 			return;
 
