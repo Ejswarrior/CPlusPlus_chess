@@ -153,6 +153,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Auth.cpp" />
     <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="ChessPieceMoves.cpp" />
     <ClCompile Include="King.cpp" />
@@ -163,24 +164,28 @@
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="SelectChessPieceMenu.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="TextInput.cpp" />
     <ClCompile Include="Topbar.cpp" />
     <ClCompile Include="WinMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Auth.h" />
     <ClInclude Include="Bishop.h" />
     <ClInclude Include="BoardSquareStruct.h" />
     <ClInclude Include="ChessPieceMoves.h" />
+    <ClInclude Include="FileName.h" />
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="MultipleSocket.h" />
     <ClInclude Include="Queen.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="ChessPieceBase.h" />
-    <ClInclude Include="Header.h" />
+    <ClInclude Include="EventHelpers.h" />
     <ClInclude Include="Pawn.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="SelectChessPieceMenu.h" />
     <ClInclude Include="struct_header.h" />
+    <ClInclude Include="TextInput.h" />
     <ClInclude Include="Topbar.h" />
     <ClInclude Include="WinMenu.h" />
   </ItemGroup>

@@ -17,6 +17,7 @@
 #include <algorithm>
 #include <iterator>
 #include "MultipleSocket.h"
+#include "EventHelpers.h"
 
 
 void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
@@ -24,15 +25,6 @@ void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
 		if (!chessPiece->isChessPieceActive) chessPiece->isChessPieceActive = true;
 		chessPiece->baseChessPiece.setPosition(sf::Vector2f(chessPiece->startingPosistion.x, chessPiece->startingPosistion.y + 75));
 	}
-}
-
-bool clickedOnObject(sf::Vector2f objectPosition, sf::Vector2f objectSize, sf::Vector2f mouseClickPosition) {
-
-	if (mouseClickPosition.x > objectPosition.x && mouseClickPosition.x < objectPosition.x + objectSize.x
-		&& mouseClickPosition.y > objectPosition.y && mouseClickPosition.y < objectPosition.y + objectSize.y)
-		return true;
-	else return false;
-
 }
 
 void checkForCheckMate(int player, ChessPieceBase* opposingPlayer1King, ChessPieceBase* opposingPlayer2King, std::vector<ChessPieceBase*> activeChessPieces, std::vector<boardSquareStruct>& boardSquareAttributes, std::string chessPieceType, int originalIndex ) {
@@ -251,7 +243,7 @@ int main() {
 			}
 
 			if (event.type == sf::Event::MouseButtonPressed)
-			{
+			{	
 				if (event.mouseButton.button == sf::Mouse::Left) 
 				{	
 					if (hasPawnReachedEnd) {
