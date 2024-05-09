@@ -18,6 +18,8 @@
 #include <iterator>
 #include "MultipleSocket.h"
 #include "EventHelpers.h"
+#include "TextInput.h"
+#include "Auth.h"
 
 
 void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
@@ -83,6 +85,8 @@ int main() {
 	Topbar topbar;
 	SelectChessPieceMenu chessPieceMenu;
 	MultipleSocket serverSocket;
+	TextInput textInput(sf::Vector2f(0,0));
+	Auth auth;
 	serverSocket.intializeSocket("127.0.0.1", 8910);
 
 	//Todo: Find a better way to initialize all the Chess pieces
@@ -241,7 +245,10 @@ int main() {
 			if (hasAPlayerWon.isKingTaken && event.type == sf::Event::KeyPressed) {
 				window.close();
 			}
-
+			if (!auth.getAuthStatus()) {
+				textInput.voidCheckForKeyboardInput(event);
+				textInput.checkForClick(event);
+			}
 			if (event.type == sf::Event::MouseButtonPressed)
 			{	
 				if (event.mouseButton.button == sf::Mouse::Left) 
@@ -429,16 +436,23 @@ int main() {
 		}
 
 			window.clear();
-			for (boardSquareStruct boardSquareStruct : boardSquareAttributes) {
-				window.draw(boardSquareStruct.boardSquare);
-			}
 
-			for (ChessPieceBase* chessPiece : activeChessPieces) {
-				if (chessPiece->isChessPieceActive) window.draw(chessPiece->baseChessPiece);
+			if (auth.getAuthStatus()) {
+				for (boardSquareStruct boardSquareStruct : boardSquareAttributes) {
+					window.draw(boardSquareStruct.boardSquare);
+				}
+
+				for (ChessPieceBase* chessPiece : activeChessPieces) {
+					if (chessPiece->isChessPieceActive) window.draw(chessPiece->baseChessPiece);
+				}
+				if (hasAPlayerWon.isKingTaken) menuWin.drawMenu(window);
+				if (hasPawnReachedEnd) chessPieceMenu.draw(window);
+				topbar.draw(window);
 			}
-			if(hasAPlayerWon.isKingTaken) menuWin.drawMenu(window);
-			if(hasPawnReachedEnd) chessPieceMenu.draw(window);
-			topbar.draw(window);
+			else {
+				textInput.draw(window);
+			}
+		
 			window.display();
 	}
 
