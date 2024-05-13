@@ -22,8 +22,6 @@ private:
 		return textValue.findCharacterPos(textValue.getString().getSize() - 1);
 	}
 
-
-
 public: 
 
 	TextInput(sf::Vector2f inputPosition) {
@@ -93,3 +91,4 @@ public:
 	
 };
 
+ 

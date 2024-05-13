@@ -85,8 +85,7 @@ int main() {
 	Topbar topbar;
 	SelectChessPieceMenu chessPieceMenu;
 	MultipleSocket serverSocket;
-	TextInput textInput(sf::Vector2f(0,0));
-	Auth auth;
+	Auth authPage;
 	serverSocket.intializeSocket("127.0.0.1", 8910);
 
 	//Todo: Find a better way to initialize all the Chess pieces
@@ -245,9 +244,13 @@ int main() {
 			if (hasAPlayerWon.isKingTaken && event.type == sf::Event::KeyPressed) {
 				window.close();
 			}
-			if (!auth.getAuthStatus()) {
-				textInput.voidCheckForKeyboardInput(event);
-				textInput.checkForClick(event);
+			if (!authPage.getAuthStatus()) {
+				authPage.emailInput.voidCheckForKeyboardInput(event);
+				authPage.passwordInput.voidCheckForKeyboardInput(event);
+
+				authPage.emailInput.checkForClick(event);
+				authPage.passwordInput.checkForClick(event);
+
 			}
 			if (event.type == sf::Event::MouseButtonPressed)
 			{	
@@ -437,7 +440,7 @@ int main() {
 
 			window.clear();
 
-			if (auth.getAuthStatus()) {
+			if (authPage.getAuthStatus()) {
 				for (boardSquareStruct boardSquareStruct : boardSquareAttributes) {
 					window.draw(boardSquareStruct.boardSquare);
 				}
@@ -450,7 +453,7 @@ int main() {
 				topbar.draw(window);
 			}
 			else {
-				textInput.draw(window);
+				authPage.drawAuthPage(window);
 			}
 		
 			window.display();
