@@ -246,10 +246,7 @@ int main() {
 			}
 			if (!authPage.getAuthStatus()) {
 				authPage.emailInput.voidCheckForKeyboardInput(event);
-				authPage.passwordInput.voidCheckForKeyboardInput(event);
-
 				authPage.emailInput.checkForClick(event);
-				authPage.passwordInput.checkForClick(event);
 
 			}
 			if (event.type == sf::Event::MouseButtonPressed)

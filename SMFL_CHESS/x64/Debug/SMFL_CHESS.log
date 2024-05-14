@@ -1,38 +1,14 @@
 ﻿  Auth.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(14,12): error C3646: 'emailInput': unknown override specifier
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(15,12): error C3646: 'emailInput': unknown override specifier
   (compiling source file 'Auth.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(14,23): error C2059: syntax error: '='
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(15,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
   (compiling source file 'Auth.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(14,54): error C2238: unexpected token(s) preceding ';'
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(16,11): error C2614: 'Auth': illegal member initialization: 'emailInput' is not a base or member
   (compiling source file 'Auth.cpp')
   
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(15,12): error C3646: 'passwordInput': unknown override specifier
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(15,26): error C2059: syntax error: '='
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(15,57): error C2238: unexpected token(s) preceding ';'
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(18,3): error C2065: 'emailInput': undeclared identifier
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(18,16): error C3861: 'TextInput': identifier not found
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(19,3): error C2065: 'passwordInput': undeclared identifier
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(19,19): error C3861: 'TextInput': identifier not found
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(28,3): error C2065: 'emailInput': undeclared identifier
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(29,3): error C2065: 'passwordInput': undeclared identifier
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(26,3): error C2065: 'emailInput': undeclared identifier
   (compiling source file 'Auth.cpp')
   
   Source.cpp
