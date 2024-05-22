@@ -247,67 +247,69 @@ int main() {
 			if (!authPage.getAuthStatus()) {
 				authPage.emailInput.voidCheckForKeyboardInput(event);
 				authPage.emailInput.checkForClick(event);
-
+				authPage.passwordInput.voidCheckForKeyboardInput(event);
+				authPage.passwordInput.checkForClick(event);
 			}
-			if (event.type == sf::Event::MouseButtonPressed)
-			{	
-				if (event.mouseButton.button == sf::Mouse::Left) 
-				{	
-					if (hasPawnReachedEnd) {
-						for (int i = 0; i <= 3; i++) {
-							sf::Vector2f selectChessPieceListItem = chessPieceMenu.listItemPositions[i];
+			if (authPage.getAuthStatus()) {
+				if (event.type == sf::Event::MouseButtonPressed)
+				{
+					if (event.mouseButton.button == sf::Mouse::Left)
+					{
+						if (hasPawnReachedEnd) {
+							for (int i = 0; i <= 3; i++) {
+								sf::Vector2f selectChessPieceListItem = chessPieceMenu.listItemPositions[i];
 
-							if (clickedOnObject(selectChessPieceListItem, chessPieceMenu.listItemSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
-								switch (i) {
-								case 0:
-									ChessPieceBase * currentPawn;
+								if (clickedOnObject(selectChessPieceListItem, chessPieceMenu.listItemSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+									switch (i) {
+									case 0:
+										ChessPieceBase * currentPawn;
 
-									for (int i = 0; i < activeChessPieces.size(); i++) {
-										ChessPieceBase* currentChessPiece = activeChessPieces[i];
+										for (int i = 0; i < activeChessPieces.size(); i++) {
+											ChessPieceBase* currentChessPiece = activeChessPieces[i];
 
-										if (currentChessPiece->chessPieceType == "Pawn" && currentChessPiece->isChessPieceActive && currentChessPiece->pawnHasReachedEnd) {
-											ChessPieceBase* newBishopPlayer1 = new Bishop("player1NewBishop", sf::Vector2f(currentChessPiece->posistion.x, currentChessPiece->player == 2 ? currentChessPiece->posistion.y - startingYPostion : currentChessPiece->posistion.y + startingYPostion), "images/player1Bishop.png", currentChessPiece->player, "Bishop", currentChessPiece->startingIndexes, currentChessPiece->boardSquareIndex);
-											newBishopPlayer1->numberXPosition = currentChessPiece->numberXPosition;
-											newBishopPlayer1->numberYPosition = currentChessPiece->numberYPosition;
-											boardSquareAttributes[currentChessPiece->boardSquareIndex].chessPieceId = newBishopPlayer1->id;
-											activeChessPieces.push_back(newBishopPlayer1);
-											currentChessPiece->isChessPieceActive = false;
+											if (currentChessPiece->chessPieceType == "Pawn" && currentChessPiece->isChessPieceActive && currentChessPiece->pawnHasReachedEnd) {
+												ChessPieceBase* newBishopPlayer1 = new Bishop("player1NewBishop", sf::Vector2f(currentChessPiece->posistion.x, currentChessPiece->player == 2 ? currentChessPiece->posistion.y - startingYPostion : currentChessPiece->posistion.y + startingYPostion), "images/player1Bishop.png", currentChessPiece->player, "Bishop", currentChessPiece->startingIndexes, currentChessPiece->boardSquareIndex);
+												newBishopPlayer1->numberXPosition = currentChessPiece->numberXPosition;
+												newBishopPlayer1->numberYPosition = currentChessPiece->numberYPosition;
+												boardSquareAttributes[currentChessPiece->boardSquareIndex].chessPieceId = newBishopPlayer1->id;
+												activeChessPieces.push_back(newBishopPlayer1);
+												currentChessPiece->isChessPieceActive = false;
+											}
 										}
+										break;
+									case 1:
+										logger("Queen");
+										break;
+									case 2:
+										logger("Rook");
+										break;
+									case 3:
+										logger("Knight");
+										break;
 									}
-									break;
-								case 1:
-									logger("Queen");
-									break;
-								case 2:
-									logger("Rook");
-									break;
-								case 3:
-									logger("Knight");
-									break;
-								}
-								hasPawnReachedEnd = false;
-							};
+									hasPawnReachedEnd = false;
+								};
+							}
 						}
-					}
 
 
-					if (clickedOnObject(topbar.resetButtonPosistion, topbar.resetButtonSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
-						serverSocket.sendData(boardSquareAttributes);
-						serverSocket.recieveData();
-						/*resetGame(activeChessPieces);
-						boardSquareAttributes.clear();
-						boardSquareAttributes = intializeChessBoard();*/
-					}
-					//Select the Chess Piece
-					if (!currentlySelectedChessPiece.isCurrentlySelected) {
-						for (boardSquareStruct& currentBoardSquareStruct : boardSquareAttributes) {
-							sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
-							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
-							if (clickedOnObject(boardSquarePosistion, sf::Vector2f(boardSquareWidth, boardSquareHeight), sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
-						
-								if (!currentBoardSquareStruct.chessPieceId.empty() && currentBoardSquareStruct.chessPieceId.size() > 0) {
-							
-									std::cout << currentPlayerTurn << std::endl;
+						if (clickedOnObject(topbar.resetButtonPosistion, topbar.resetButtonSize, sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+							serverSocket.sendData(boardSquareAttributes);
+							serverSocket.recieveData();
+							/*resetGame(activeChessPieces);
+							boardSquareAttributes.clear();
+							boardSquareAttributes = intializeChessBoard();*/
+						}
+						//Select the Chess Piece
+						if (!currentlySelectedChessPiece.isCurrentlySelected) {
+							for (boardSquareStruct& currentBoardSquareStruct : boardSquareAttributes) {
+								sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
+								sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
+								if (clickedOnObject(boardSquarePosistion, sf::Vector2f(boardSquareWidth, boardSquareHeight), sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+
+									if (!currentBoardSquareStruct.chessPieceId.empty() && currentBoardSquareStruct.chessPieceId.size() > 0) {
+
+										std::cout << currentPlayerTurn << std::endl;
 										for (ChessPieceBase* activeChessPiece : activeChessPieces) {
 											if (activeChessPiece->id == currentBoardSquareStruct.chessPieceId && activeChessPiece->player == currentPlayerTurn) {
 												currentlySelectedChessPiece.selectedChessPiece = activeChessPiece;
@@ -320,96 +322,78 @@ int main() {
 											currentlySelectedChessPiece.isCurrentlySelected = true;
 											currentlySelectedChessPiece.selectedIndex = sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
 										}
-								
+
+									}
 								}
 							}
 						}
-					}
-					//Move Chess Piece
-					else {
-						for (int i = 0; i < boardSquareAttributes.size(); i++) {
-							boardSquareStruct& currentBoardSquareStruct = boardSquareAttributes[i];
-							sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
-							sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
-							//Check for mouse position compared to boardSquare
-							if (clickedOnObject(boardSquarePosistion, sf::Vector2f(boardSquareWidth, boardSquareHeight) , sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
-								ChessPieceBase* currentChessPiece = nullptr;
+						//Move Chess Piece
+						else {
+							for (int i = 0; i < boardSquareAttributes.size(); i++) {
+								boardSquareStruct& currentBoardSquareStruct = boardSquareAttributes[i];
+								sf::RectangleShape boardSquare = currentBoardSquareStruct.boardSquare;
+								sf::Vector2f boardSquarePosistion = boardSquare.getPosition();
+								//Check for mouse position compared to boardSquare
+								if (clickedOnObject(boardSquarePosistion, sf::Vector2f(boardSquareWidth, boardSquareHeight), sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+									ChessPieceBase* currentChessPiece = nullptr;
 
-								for (ChessPieceBase* activeChessPiece : activeChessPieces) {
-									if (activeChessPiece->id == currentBoardSquareStruct.chessPieceId) {
-										currentChessPiece = activeChessPiece;
+									for (ChessPieceBase* activeChessPiece : activeChessPieces) {
+										if (activeChessPiece->id == currentBoardSquareStruct.chessPieceId) {
+											currentChessPiece = activeChessPiece;
+										}
 									}
-								}
 									//Check if we can move from the Chess Piece derived class
-								if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y), 
-									currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, currentChessPiece != nullptr ? currentChessPiece->player : 0, boardSquareAttributes)) {
-									//Check if we try to take our own chess piece
-									if (currentBoardSquareStruct.chessPieceId.size() > 0 && currentlySelectedChessPiece.selectedChessPiece->player == currentChessPiece->player) {
-										logger(currentBoardSquareStruct.chessPieceId);
-										currentlySelectedChessPiece.selectedChessPiece = nullptr;
-										currentlySelectedChessPiece.isCurrentlySelected = false;
-										continue;
-									}
-
-									//Check if we take other players chess piece
-									if (currentChessPiece != nullptr && currentChessPiece != currentlySelectedChessPiece.selectedChessPiece && currentlySelectedChessPiece.selectedChessPiece->player != currentChessPiece->player) {
-										if (currentChessPiece->chessPieceType == "King") {
-											menuWin.player = currentlySelectedChessPiece.selectedChessPiece->player;
-											hasAPlayerWon.isKingTaken = true;
-											hasAPlayerWon.whichPlayerWon = currentlySelectedChessPiece.selectedChessPiece->player;
+									if (currentlySelectedChessPiece.selectedChessPiece->canMovePosistions(sf::Vector2f(boardSquarePosistion.x, boardSquarePosistion.y),
+										currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, currentChessPiece != nullptr ? currentChessPiece->player : 0, boardSquareAttributes)) {
+										//Check if we try to take our own chess piece
+										if (currentBoardSquareStruct.chessPieceId.size() > 0 && currentlySelectedChessPiece.selectedChessPiece->player == currentChessPiece->player) {
+											logger(currentBoardSquareStruct.chessPieceId);
+											currentlySelectedChessPiece.selectedChessPiece = nullptr;
+											currentlySelectedChessPiece.isCurrentlySelected = false;
 											continue;
 										}
-										currentChessPiece->isChessPieceActive = false;
+
+										//Check if we take other players chess piece
+										if (currentChessPiece != nullptr && currentChessPiece != currentlySelectedChessPiece.selectedChessPiece && currentlySelectedChessPiece.selectedChessPiece->player != currentChessPiece->player) {
+											if (currentChessPiece->chessPieceType == "King") {
+												menuWin.player = currentlySelectedChessPiece.selectedChessPiece->player;
+												hasAPlayerWon.isKingTaken = true;
+												hasAPlayerWon.whichPlayerWon = currentlySelectedChessPiece.selectedChessPiece->player;
+												continue;
+											}
+											currentChessPiece->isChessPieceActive = false;
+										}
+										currentChessPiece = currentlySelectedChessPiece.selectedChessPiece;
+										int originalIndex = currentlySelectedChessPiece.selectedChessPiece->boardSquareIndex;
+										currentChessPiece->boardSquareIndex = i;
+
+										currentBoardSquareStruct.chessPieceId = currentChessPiece->id;
+
+										chessPieceMoves.updateMoves(currentlySelectedChessPiece.selectedChessPiece->player, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, currentlySelectedChessPiece.selectedChessPiece->numberXPosition, currentlySelectedChessPiece.selectedChessPiece->numberYPosition, currentlySelectedChessPiece.selectedChessPiece->chessPieceType);
+										currentChessPiece->numberXPosition = currentBoardSquareStruct.numberXPosition;
+										currentChessPiece->numberYPosition = currentBoardSquareStruct.numberYPosistion;
+
+										sf::Vector2f moveCoordinates = sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2));
+										currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
+										checkForCheckMate(currentChessPiece->player, player1King, player2King, activeChessPieces, boardSquareAttributes, currentChessPiece->chessPieceType, originalIndex);
+										currentPlayerTurn = currentPlayerTurn == 1 ? 2 : 1;
+										if (hasPawnReachedEnd) logger("reached end");
+										currentlySelectedChessPiece.isCurrentlySelected = false;
+										currentlySelectedChessPiece.canDeleteSelected = true;
+										;
+
 									}
-									currentChessPiece = currentlySelectedChessPiece.selectedChessPiece;
-									int originalIndex = currentlySelectedChessPiece.selectedChessPiece->boardSquareIndex;
-									currentChessPiece->boardSquareIndex = i;
-
-									currentBoardSquareStruct.chessPieceId = currentChessPiece->id;
-
-									chessPieceMoves.updateMoves(currentlySelectedChessPiece.selectedChessPiece->player, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion, currentlySelectedChessPiece.selectedChessPiece->numberXPosition, currentlySelectedChessPiece.selectedChessPiece->numberYPosition, currentlySelectedChessPiece.selectedChessPiece->chessPieceType);
-									currentChessPiece->numberXPosition = currentBoardSquareStruct.numberXPosition;
-									currentChessPiece->numberYPosition = currentBoardSquareStruct.numberYPosistion;
-
-									sf::Vector2f moveCoordinates = sf::Vector2f(boardSquarePosistion.x + (boardSquareWidth / 2) - (chessPieceWidth / 2), boardSquarePosistion.y + (boardSquareHeight / 2) - (chessPieceHeight / 2));
-									currentlySelectedChessPiece.selectedChessPiece->move(moveCoordinates, sf::Vector2f(currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion), hasPawnReachedEnd, currentBoardSquareStruct.numberXPosition, currentBoardSquareStruct.numberYPosistion);
-									checkForCheckMate(currentChessPiece->player, player1King, player2King, activeChessPieces, boardSquareAttributes, currentChessPiece->chessPieceType, originalIndex);
-									currentPlayerTurn = currentPlayerTurn == 1 ? 2 : 1;
-									if (hasPawnReachedEnd) logger("reached end");
-									currentlySelectedChessPiece.isCurrentlySelected = false;
-									currentlySelectedChessPiece.canDeleteSelected = true;
-								;
-
-								}
-								// If we can't move remove selected Chess Piece
-								else {
-									currentlySelectedChessPiece.isCurrentlySelected = false;
-									currentlySelectedChessPiece.selectedChessPiece = nullptr;
-									continue;
+									// If we can't move remove selected Chess Piece
+									else {
+										currentlySelectedChessPiece.isCurrentlySelected = false;
+										currentlySelectedChessPiece.selectedChessPiece = nullptr;
+										continue;
+									}
 								}
 							}
-						}
 
-						if (!currentlySelectedChessPiece.isCurrentlySelected) {
+							if (!currentlySelectedChessPiece.isCurrentlySelected) {
 
-							for (int i = 0; i < boardSquareAttributes.size(); ++i) {
-								boardSquareStruct& embeddedBoardSquareStruct = boardSquareAttributes.at(i);
-								ChessPieceBase* currentChessPiece = nullptr;
-
-								for (ChessPieceBase* activeChessPiece : activeChessPieces) {
-									if (activeChessPiece->id == embeddedBoardSquareStruct.chessPieceId) {
-										currentChessPiece = activeChessPiece;
-									}
-								};
-								if (currentChessPiece != nullptr && embeddedBoardSquareStruct.numberXPosition == currentlySelectedChessPiece.selectedIndex.x && embeddedBoardSquareStruct.numberYPosistion == currentlySelectedChessPiece.selectedIndex.y) {
-									embeddedBoardSquareStruct.boardSquare.setFillColor(embeddedBoardSquareStruct.defaultBoardColor);
-								}
-
-							}
-
-							//Need to find old index and remove references to original chess piece position
-
-							if (currentlySelectedChessPiece.canDeleteSelected && currentlySelectedChessPiece.selectedIndex.x != 0 && currentlySelectedChessPiece.selectedIndex.y != 0)
 								for (int i = 0; i < boardSquareAttributes.size(); ++i) {
 									boardSquareStruct& embeddedBoardSquareStruct = boardSquareAttributes.at(i);
 									ChessPieceBase* currentChessPiece = nullptr;
@@ -417,22 +401,42 @@ int main() {
 									for (ChessPieceBase* activeChessPiece : activeChessPieces) {
 										if (activeChessPiece->id == embeddedBoardSquareStruct.chessPieceId) {
 											currentChessPiece = activeChessPiece;
-
 										}
 									};
-
 									if (currentChessPiece != nullptr && embeddedBoardSquareStruct.numberXPosition == currentlySelectedChessPiece.selectedIndex.x && embeddedBoardSquareStruct.numberYPosistion == currentlySelectedChessPiece.selectedIndex.y) {
-										embeddedBoardSquareStruct.chessPieceId.clear();
 										embeddedBoardSquareStruct.boardSquare.setFillColor(embeddedBoardSquareStruct.defaultBoardColor);
-										currentlySelectedChessPiece.selectedIndex = sf::Vector2f(0, 0);
-										currentlySelectedChessPiece.canDeleteSelected = false;
-										currentlySelectedChessPiece.selectedChessPiece = nullptr;
 									}
-								};
+
+								}
+
+								//Need to find old index and remove references to original chess piece position
+
+								if (currentlySelectedChessPiece.canDeleteSelected && currentlySelectedChessPiece.selectedIndex.x != 0 && currentlySelectedChessPiece.selectedIndex.y != 0)
+									for (int i = 0; i < boardSquareAttributes.size(); ++i) {
+										boardSquareStruct& embeddedBoardSquareStruct = boardSquareAttributes.at(i);
+										ChessPieceBase* currentChessPiece = nullptr;
+
+										for (ChessPieceBase* activeChessPiece : activeChessPieces) {
+											if (activeChessPiece->id == embeddedBoardSquareStruct.chessPieceId) {
+												currentChessPiece = activeChessPiece;
+
+											}
+										};
+
+										if (currentChessPiece != nullptr && embeddedBoardSquareStruct.numberXPosition == currentlySelectedChessPiece.selectedIndex.x && embeddedBoardSquareStruct.numberYPosistion == currentlySelectedChessPiece.selectedIndex.y) {
+											embeddedBoardSquareStruct.chessPieceId.clear();
+											embeddedBoardSquareStruct.boardSquare.setFillColor(embeddedBoardSquareStruct.defaultBoardColor);
+											currentlySelectedChessPiece.selectedIndex = sf::Vector2f(0, 0);
+											currentlySelectedChessPiece.canDeleteSelected = false;
+											currentlySelectedChessPiece.selectedChessPiece = nullptr;
+										}
+									};
+							}
 						}
 					}
 				}
-			}		
+			}
+	
 		}
 
 			window.clear();

@@ -15,7 +15,6 @@ private:
 	sf::RectangleShape cursorIndicator;
 	int characterPosition = 1;
 	sf::Font font;
-	std::string inputString;
 	std::vector<int> invalidTextCode = { 0 };
 
 	sf::Vector2f getTextEndingPosition() {
@@ -23,6 +22,10 @@ private:
 	}
 
 public: 
+	int textInputWidth = 300;
+	int textInputHeight = 48;
+	std::string inputString;
+
 
 	TextInput(sf::Vector2f inputPosition) {
 		font.loadFromFile("fonts/Butler_Regular.otf");

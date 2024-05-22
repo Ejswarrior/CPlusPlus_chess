@@ -156,6 +156,7 @@
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="Bishop.cpp" />
     <ClCompile Include="ChessPieceMoves.cpp" />
+    <ClCompile Include="HTTPService.cpp" />
     <ClCompile Include="King.cpp" />
     <ClCompile Include="Knight.cpp" />
     <ClCompile Include="MultipleSocket.cpp" />
@@ -174,6 +175,7 @@
     <ClInclude Include="BoardSquareStruct.h" />
     <ClInclude Include="ChessPieceMoves.h" />
     <ClInclude Include="FileName.h" />
+    <ClInclude Include="HTTPService.h" />
     <ClInclude Include="King.h" />
     <ClInclude Include="Knight.h" />
     <ClInclude Include="MultipleSocket.h" />

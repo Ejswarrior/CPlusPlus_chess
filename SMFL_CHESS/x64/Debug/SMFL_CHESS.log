@@ -1,15 +1,4 @@
 ﻿  Auth.cpp
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(15,12): error C3646: 'emailInput': unknown override specifier
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(15,22): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(16,11): error C2614: 'Auth': illegal member initialization: 'emailInput' is not a base or member
-  (compiling source file 'Auth.cpp')
-  
-C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(26,3): error C2065: 'emailInput': undeclared identifier
-  (compiling source file 'Auth.cpp')
-  
   Source.cpp
   Generating Code...
+  SMFL_CHESS.vcxproj -> C:\Users\Erik\source\repos\SMLF_CHESS\x64\Debug\SMFL_CHESS.exe
