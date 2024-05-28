@@ -34,7 +34,7 @@ public:
 		textInputContainer.setSize(sf::Vector2f(300, 48));
 		cursorIndicator.setSize(sf::Vector2f(1, 38));
 		cursorIndicator.setFillColor(sf::Color::Black);
-		cursorIndicator.setPosition(sf::Vector2f(inputPosition.x + 16, inputPosition.y - 8));
+		cursorIndicator.setPosition(sf::Vector2f(inputPosition.x + 16, inputPosition.y + 4));
 		textValue.setCharacterSize(26);
 		textValue.setFillColor(sf::Color::Black);
 		textValue.setPosition(sf::Vector2f(inputPosition.x + 16, inputPosition.y - 8));

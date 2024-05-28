@@ -10,7 +10,7 @@ class HTTPService
 			http.setHost("http://localhost:5052/");
 		}
 
-		void get(std::string uri) {
+		sf::Http::Response get(std::string uri) {
 			sf::Http::Request request;
 			request.setMethod(sf::Http::Request::Get);
 			request.setUri(uri);
@@ -19,8 +19,8 @@ class HTTPService
 
 
 			sf::Http::Response response = http.sendRequest(request);
+			return response;
 		}
-
 
 };
 

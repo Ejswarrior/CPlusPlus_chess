@@ -1,4 +1,6 @@
 ﻿  Auth.cpp
   Source.cpp
+  TextInput.cpp
   Generating Code...
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.h(59,1): warning C4715: 'Auth::authenticateUser': not all control paths return a value
   SMFL_CHESS.vcxproj -> C:\Users\Erik\source\repos\SMLF_CHESS\x64\Debug\SMFL_CHESS.exe

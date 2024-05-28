@@ -249,6 +249,14 @@ int main() {
 				authPage.emailInput.checkForClick(event);
 				authPage.passwordInput.voidCheckForKeyboardInput(event);
 				authPage.passwordInput.checkForClick(event);
+				if (clickedOnObject(authPage.loginButton.getPosition(), authPage.loginButton.getSize(), sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+					std::cout << "clicked on login button" << std::endl;
+
+					authPage.authenticateUser(authPage.emailInput.inputString, authPage.passwordInput.inputString);
+					bool loginStatus = authPage.getAuthStatus();
+					std::string result = loginStatus ? "Logged in" : "Logged Out";
+					std::cout << result << std::endl;
+				}
 			}
 			if (authPage.getAuthStatus()) {
 				if (event.type == sf::Event::MouseButtonPressed)

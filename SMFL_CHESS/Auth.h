@@ -6,6 +6,7 @@
 #include <iostream>
 #include <vector>
 #include "TextInput.h"
+#include "HTTPService.h"
 
 class Auth
 {
@@ -15,31 +16,33 @@ private:
 	sf::Text emailSubtitle;
 	sf::Text passwordSubtitle;
 	sf::Text titleText;
+	sf::Text loginText;
 	sf::Font font;
 
 
 public:
 
+	void setUpText(sf::Text& textObj, const std::string textValue, const sf::Vector2f textPosition, const int characterSize) {
+		textObj.setFont(font);
+		textObj.setCharacterSize(characterSize);
+		textObj.setPosition(textPosition);
+		textObj.setFillColor(sf::Color::White);
+		textObj.setString(textValue);
+	}
+
 	TextInput emailInput;
 	TextInput passwordInput;
+	HTTPService httpService;
+	sf::RectangleShape loginButton;
 	Auth() : emailInput{ sf::Vector2f(middleOfPage, 250) }, passwordInput{ sf::Vector2f(middleOfPage, 340) } {
 		font.loadFromFile("fonts/Butler_Regular.otf");
-		emailSubtitle.setFont(font);
-		emailSubtitle.setCharacterSize(16);
-		emailSubtitle.setPosition(sf::Vector2f(middleOfPage, 225));
-		emailSubtitle.setFillColor(sf::Color::White);
-		emailSubtitle.setString("Email");
-		passwordSubtitle.setFont(font);
-		passwordSubtitle.setCharacterSize(16);
-		passwordSubtitle.setPosition(sf::Vector2f(middleOfPage, 315));
-		passwordSubtitle.setFillColor(sf::Color::White);
-		passwordSubtitle.setString("Password");
-		titleText.setFont(font);
-		titleText.setCharacterSize(32);
-		titleText.setPosition(sf::Vector2f(middleOfPage - 50, 55));
-		titleText.setFillColor(sf::Color::White);
-		titleText.setString("Welcome to Simple Fast Chess");
-
+		setUpText(emailSubtitle, "Email", sf::Vector2f(middleOfPage, 225), 16);
+		setUpText(passwordSubtitle, "Password", sf::Vector2f(middleOfPage, 315), 16);
+		setUpText(titleText, "Welcome to Simple Fast Chess", sf::Vector2f(middleOfPage - 50, 55), 32);
+		setUpText(loginText, "Login", sf::Vector2f(middleOfPage + 130, 480 + 15), 16);
+		loginButton.setFillColor(sf::Color::Blue);
+		loginButton.setSize(sf::Vector2f(300,48));
+		loginButton.setPosition(middleOfPage, 480);
 	};
 
 	bool getAuthStatus() {
@@ -47,6 +50,11 @@ public:
 	}
 
 	bool authenticateUser(std::string email, std::string password) {
+		if (email.size() == 0 || password.size() == 0) return false;
+		
+		sf::Http::Response loginResponse = httpService.get("/login");
+
+		isAuthenticated = loginResponse.Ok ? true : false;
 
 	}
 
@@ -57,6 +65,8 @@ public:
 		window.draw(emailSubtitle);
 		window.draw(passwordSubtitle);
 		window.draw(titleText);
+		window.draw(loginButton);
+		window.draw(loginText);
 	}
 
 
