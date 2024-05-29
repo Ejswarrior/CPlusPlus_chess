@@ -153,8 +153,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AccountCreatePage.cpp" />
     <ClCompile Include="Auth.cpp" />
     <ClCompile Include="Bishop.cpp" />
+    <ClCompile Include="Button.cpp" />
     <ClCompile Include="ChessPieceMoves.cpp" />
     <ClCompile Include="HTTPService.cpp" />
     <ClCompile Include="King.cpp" />
@@ -165,14 +167,17 @@
     <ClCompile Include="Pawn.cpp" />
     <ClCompile Include="SelectChessPieceMenu.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="TextInput.cpp" />
     <ClCompile Include="Topbar.cpp" />
     <ClCompile Include="WinMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AccountCreatePage.h" />
     <ClInclude Include="Auth.h" />
     <ClInclude Include="Bishop.h" />
     <ClInclude Include="BoardSquareStruct.h" />
+    <ClInclude Include="Button.h" />
     <ClInclude Include="ChessPieceMoves.h" />
     <ClInclude Include="FileName.h" />
     <ClInclude Include="HTTPService.h" />
@@ -180,6 +185,7 @@
     <ClInclude Include="Knight.h" />
     <ClInclude Include="MultipleSocket.h" />
     <ClInclude Include="Queen.h" />
+    <ClInclude Include="resource1.h" />
     <ClInclude Include="Rook.h" />
     <ClInclude Include="ChessPieceBase.h" />
     <ClInclude Include="EventHelpers.h" />
@@ -187,9 +193,13 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="SelectChessPieceMenu.h" />
     <ClInclude Include="struct_header.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="TextInput.h" />
     <ClInclude Include="Topbar.h" />
     <ClInclude Include="WinMenu.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="SMFL_CHESS1.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

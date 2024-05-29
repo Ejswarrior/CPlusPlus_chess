@@ -7,6 +7,8 @@
 #include <vector>
 #include "TextInput.h"
 #include "HTTPService.h"
+#include "Button.h"
+#include "Text.h"
 
 class Auth
 {
@@ -33,16 +35,21 @@ public:
 	TextInput emailInput;
 	TextInput passwordInput;
 	HTTPService httpService;
-	sf::RectangleShape loginButton;
-	Auth() : emailInput{ sf::Vector2f(middleOfPage, 250) }, passwordInput{ sf::Vector2f(middleOfPage, 340) } {
+	Button loginButton;
+	Text noAccountText;
+
+	Auth() : emailInput{ sf::Vector2f(middleOfPage, 250) }, passwordInput{ sf::Vector2f(middleOfPage, 340) }, 
+		loginButton{ "Login", sf::Vector2f(middleOfPage, 480),sf::Vector2f(300,48), "Primary" }, noAccountText{font, 16, sf::Vector2f(middleOfPage - 40, 500), "Create new account"} {
 		font.loadFromFile("fonts/Butler_Regular.otf");
 		setUpText(emailSubtitle, "Email", sf::Vector2f(middleOfPage, 225), 16);
 		setUpText(passwordSubtitle, "Password", sf::Vector2f(middleOfPage, 315), 16);
 		setUpText(titleText, "Welcome to Simple Fast Chess", sf::Vector2f(middleOfPage - 50, 55), 32);
-		setUpText(loginText, "Login", sf::Vector2f(middleOfPage + 130, 480 + 15), 16);
-		loginButton.setFillColor(sf::Color::Blue);
-		loginButton.setSize(sf::Vector2f(300,48));
-		loginButton.setPosition(middleOfPage, 480);
+	};
+
+	bool clickedOnCreateAccount(sf::Vector2f mouseClickPosition) {
+		const int characterSize = noAccountText.sfmlText.getCharacterSize();
+
+		return clickedOnObject(noAccountText.sfmlText.getPosition(), sf::Vector2f(characterSize / 2 * 14, characterSize), mouseClickPosition);
 	};
 
 	bool getAuthStatus() {
@@ -62,10 +69,11 @@ public:
 	void drawAuthPage(sf::RenderWindow& window) {
 		emailInput.draw(window);
 		passwordInput.draw(window);
+		noAccountText.draw(window);
 		window.draw(emailSubtitle);
 		window.draw(passwordSubtitle);
 		window.draw(titleText);
-		window.draw(loginButton);
+		loginButton.draw(window);
 		window.draw(loginText);
 	}
 

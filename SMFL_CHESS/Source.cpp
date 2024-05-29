@@ -249,7 +249,12 @@ int main() {
 				authPage.emailInput.checkForClick(event);
 				authPage.passwordInput.voidCheckForKeyboardInput(event);
 				authPage.passwordInput.checkForClick(event);
-				if (clickedOnObject(authPage.loginButton.getPosition(), authPage.loginButton.getSize(), sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+				if (authPage.emailInput.inputString.size() == 0 || authPage.passwordInput.inputString.size() == 0) {
+					authPage.loginButton.disableButton();
+				}
+				else authPage.loginButton.enableButton();
+
+				if (authPage.loginButton.didButtonRecieveClick(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
 					std::cout << "clicked on login button" << std::endl;
 
 					authPage.authenticateUser(authPage.emailInput.inputString, authPage.passwordInput.inputString);

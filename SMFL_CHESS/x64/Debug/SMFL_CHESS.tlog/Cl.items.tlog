@@ -1,5 +1,7 @@
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\AccountCreatePage.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\AccountCreatePage.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Auth.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\Auth.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Bishop.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\Bishop.obj
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Button.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\Button.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\ChessPieceMoves.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\ChessPieceMoves.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\HTTPService.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\HTTPService.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\King.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\King.obj
@@ -10,6 +12,7 @@ C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Rook.cpp;C:\Users\Erik\source\r
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Pawn.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\Pawn.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\SelectChessPieceMenu.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\SelectChessPieceMenu.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Source.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\Source.obj
+C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Text.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\Text.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\TextInput.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\TextInput.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\Topbar.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\Topbar.obj
 C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\WinMenu.cpp;C:\Users\Erik\source\repos\SMLF_CHESS\SMFL_CHESS\x64\Debug\WinMenu.obj
