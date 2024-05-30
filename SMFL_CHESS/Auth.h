@@ -39,7 +39,7 @@ public:
 	Text noAccountText;
 
 	Auth() : emailInput{ sf::Vector2f(middleOfPage, 250) }, passwordInput{ sf::Vector2f(middleOfPage, 340) }, 
-		loginButton{ "Login", sf::Vector2f(middleOfPage, 480),sf::Vector2f(300,48), "Primary" }, noAccountText{font, 16, sf::Vector2f(middleOfPage - 40, 500), "Create new account"} {
+		loginButton{ "Login", sf::Vector2f(middleOfPage, 480),sf::Vector2f(300,48), "Primary" }, noAccountText{16, sf::Vector2f(middleOfPage - 40, 500), "Create new account"} {
 		font.loadFromFile("fonts/Butler_Regular.otf");
 		setUpText(emailSubtitle, "Email", sf::Vector2f(middleOfPage, 225), 16);
 		setUpText(passwordSubtitle, "Password", sf::Vector2f(middleOfPage, 315), 16);

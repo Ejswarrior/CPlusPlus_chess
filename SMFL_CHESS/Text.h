@@ -8,8 +8,11 @@ public:
 
 		sf::Text sfmlText;
 		std::string textValue = "";
+		sf::Font font;
 
-		Text(sf::Font font, int characterSize, sf::Vector2f textPosition, std::string defaultText) {
+		Text(int characterSize, sf::Vector2f textPosition, std::string defaultText) {
+			
+			font.loadFromFile("fonts/Butler_Regular.otf");
 			sfmlText.setFont(font);
 			sfmlText.setCharacterSize(characterSize);
 			sfmlText.setPosition(textPosition);

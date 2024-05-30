@@ -37,7 +37,7 @@ public:
 		cursorIndicator.setPosition(sf::Vector2f(inputPosition.x + 16, inputPosition.y + 4));
 		textValue.setCharacterSize(26);
 		textValue.setFillColor(sf::Color::Black);
-		textValue.setPosition(sf::Vector2f(inputPosition.x + 16, inputPosition.y - 8));
+		textValue.setPosition(sf::Vector2f(inputPosition.x + 16, inputPosition.y + 8));
 	};
 
 	bool focused = false;

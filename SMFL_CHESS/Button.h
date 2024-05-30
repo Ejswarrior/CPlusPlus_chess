@@ -25,7 +25,7 @@ class Button
 			buttonText.setFont(font);
 			buttonText.setString(buttonTextValue);
 			buttonText.setCharacterSize(16);
-			buttonText.setPosition(sf::Vector2f(newButtonPosition.x + newButtonSize.x /2 -16, newButtonPosition.y + newButtonSize.y / 2 - 8));
+			buttonText.setPosition(sf::Vector2f(newButtonPosition.x + newButtonSize.x / 2 - ((buttonText.getString().getSize() / 2) * 16)/2, newButtonPosition.y + newButtonSize.y / 2 - 8));
 			buttonText.setFillColor(newVariant == "Primary" ? sf::Color::White : sf::Color::Blue);
 			buttonPosition = buttonPosition;
 			buttonSize = buttonSize;

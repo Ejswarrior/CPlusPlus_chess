@@ -20,6 +20,7 @@
 #include "EventHelpers.h"
 #include "TextInput.h"
 #include "Auth.h"
+#include "AccountCreatePage.h"
 
 
 void resetGame(std::vector<ChessPieceBase*> activeChessPieces) {
@@ -87,6 +88,7 @@ int main() {
 	MultipleSocket serverSocket;
 	Auth authPage;
 	serverSocket.intializeSocket("127.0.0.1", 8910);
+	AccountCreatePage accountCreatePage;
 
 	//Todo: Find a better way to initialize all the Chess pieces
 
@@ -245,23 +247,29 @@ int main() {
 				window.close();
 			}
 			if (!authPage.getAuthStatus()) {
-				authPage.emailInput.voidCheckForKeyboardInput(event);
-				authPage.emailInput.checkForClick(event);
-				authPage.passwordInput.voidCheckForKeyboardInput(event);
-				authPage.passwordInput.checkForClick(event);
-				if (authPage.emailInput.inputString.size() == 0 || authPage.passwordInput.inputString.size() == 0) {
-					authPage.loginButton.disableButton();
+				if (accountCreatePage.isCreateAccountPageOpen) {
+					accountCreatePage.checkForKeyboardInput(event);
 				}
-				else authPage.loginButton.enableButton();
+				else {
+					authPage.emailInput.voidCheckForKeyboardInput(event);
+					authPage.emailInput.checkForClick(event);
+					authPage.passwordInput.voidCheckForKeyboardInput(event);
+					authPage.passwordInput.checkForClick(event);
+					if (authPage.emailInput.inputString.size() == 0 || authPage.passwordInput.inputString.size() == 0) {
+						authPage.loginButton.disableButton();
+					}
+					else authPage.loginButton.enableButton();
 
-				if (authPage.loginButton.didButtonRecieveClick(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
-					std::cout << "clicked on login button" << std::endl;
+					if (authPage.loginButton.didButtonRecieveClick(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+						std::cout << "clicked on login button" << std::endl;
 
-					authPage.authenticateUser(authPage.emailInput.inputString, authPage.passwordInput.inputString);
-					bool loginStatus = authPage.getAuthStatus();
-					std::string result = loginStatus ? "Logged in" : "Logged Out";
-					std::cout << result << std::endl;
+						authPage.authenticateUser(authPage.emailInput.inputString, authPage.passwordInput.inputString);
+						bool loginStatus = authPage.getAuthStatus();
+						std::string result = loginStatus ? "Logged in" : "Logged Out";
+						std::cout << result << std::endl;
+					}
 				}
+			
 			}
 			if (authPage.getAuthStatus()) {
 				if (event.type == sf::Event::MouseButtonPressed)
@@ -467,7 +475,8 @@ int main() {
 				topbar.draw(window);
 			}
 			else {
-				authPage.drawAuthPage(window);
+				if (accountCreatePage.isCreateAccountPageOpen) accountCreatePage.drawPage(window);
+				else authPage.drawAuthPage(window);
 			}
 		
 			window.display();
