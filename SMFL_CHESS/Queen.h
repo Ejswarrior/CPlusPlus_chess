@@ -53,12 +53,10 @@ public:
                 }
                 else if (numberYPosition < (*this).numberYPosition && numberXPosition < (*this).numberXPosition && boardSquare.numberYPosistion < (*this).numberYPosition && boardSquare.numberXPosition < (*this).numberXPosition && boardSquare.numberYPosistion >= numberYPosition && boardSquare.numberXPosition >= numberXPosition) {
 
-                    std::cout << boardSquare.numberYPosistion << std::endl;
                     return false;
                 }
                 else if (numberYPosition > (*this).numberYPosition && numberXPosition < (*this).numberXPosition && boardSquare.numberYPosistion >(*this).numberYPosition && boardSquare.numberXPosition < (*this).numberXPosition && boardSquare.numberYPosistion <= numberYPosition && boardSquare.numberXPosition >= numberXPosition) {
 
-                    std::cout << boardSquare.numberYPosistion << std::endl;
                     return false;
                 }
                 else if (numberYPosition < (*this).numberYPosition && numberXPosition >(*this).numberXPosition && boardSquare.numberYPosistion < (*this).numberYPosition && boardSquare.numberXPosition >(*this).numberXPosition && boardSquare.numberYPosistion >= numberYPosition && boardSquare.numberXPosition <= numberXPosition) {

@@ -23,7 +23,7 @@ public:
 	Button createAccountButton;
 	HTTPService httpService;
 
-	bool isCreateAccountPageOpen = true;
+	bool isCreateAccountPageOpen = false;
 
 
 	AccountCreatePage() : emailInput{ sf::Vector2f(middleOfPage, 200) }, nameInput{ sf::Vector2f(middleOfPage, 290) }, passwordInput{ sf::Vector2f(middleOfPage, 380) }, 
@@ -47,14 +47,13 @@ public:
 		else createAccountButton.enableButton();
 	}
 
-	void onSubmit(sf::Vector2f mouseClickPosition) {
-		if (createAccountButton.didButtonRecieveClick(mouseClickPosition)) {
+	void onSubmit() {
 			std::string body = std::format("email={}&name={}&password={}", emailInput.inputString, nameInput.inputString, passwordInput.inputString);
-			sf::Http::Response createAccountResult = httpService.post("/create-account", body);
+			sf::Http::Response createAccountResult = httpService.post("/Auth", body);
+			std::cout << "success" << std::endl;
 
-			std::cout << createAccountResult.Ok << std::endl;
+			std::cout << createAccountResult.getStatus() << std::endl;
 			std::cout << createAccountResult.getBody() << std::endl;
-		}
 	}
 
 	void drawPage(sf::RenderWindow& window) {

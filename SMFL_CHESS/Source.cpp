@@ -249,6 +249,13 @@ int main() {
 			if (!authPage.getAuthStatus()) {
 				if (accountCreatePage.isCreateAccountPageOpen) {
 					accountCreatePage.checkForKeyboardInput(event);
+					if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
+						if (accountCreatePage.createAccountButton.didButtonRecieveClick(sf::Vector2f(event.mouseButton.x, event.mouseButton.y))) {
+							std::cout << "clicked" << std::endl;
+
+							accountCreatePage.onSubmit();
+						}
+					}
 				}
 				else {
 					authPage.emailInput.voidCheckForKeyboardInput(event);

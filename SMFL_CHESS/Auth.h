@@ -9,6 +9,7 @@
 #include "HTTPService.h"
 #include "Button.h"
 #include "Text.h"
+#include <format>
 
 class Auth
 {
@@ -39,7 +40,7 @@ public:
 	Text noAccountText;
 
 	Auth() : emailInput{ sf::Vector2f(middleOfPage, 250) }, passwordInput{ sf::Vector2f(middleOfPage, 340) }, 
-		loginButton{ "Login", sf::Vector2f(middleOfPage, 480),sf::Vector2f(300,48), "Primary" }, noAccountText{16, sf::Vector2f(middleOfPage - 40, 500), "Create new account"} {
+		loginButton{ "Login", sf::Vector2f(middleOfPage, 480), sf::Vector2f(300,48), "Primary" }, noAccountText{16, sf::Vector2f(middleOfPage - 40, 500), "Create new account"} {
 		font.loadFromFile("fonts/Butler_Regular.otf");
 		setUpText(emailSubtitle, "Email", sf::Vector2f(middleOfPage, 225), 16);
 		setUpText(passwordSubtitle, "Password", sf::Vector2f(middleOfPage, 315), 16);
@@ -58,10 +59,12 @@ public:
 
 	bool authenticateUser(std::string email, std::string password) {
 		if (email.size() == 0 || password.size() == 0) return false;
-		
-		sf::Http::Response loginResponse = httpService.get("/login");
+		std::string body = std::format("Auth?email={}.com&password={}", email, password);
 
-		isAuthenticated = loginResponse.Ok ? true : false;
+		sf::Http::Response loginResponse = httpService.get("Auth");
+		std::cout << loginResponse.getBody() << std::endl;
+
+		//isAuthenticated = loginResponse.Ok ? true : false;
 
 	}
 
