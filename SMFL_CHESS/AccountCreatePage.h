@@ -23,7 +23,7 @@ public:
 	Button createAccountButton;
 	HTTPService httpService;
 
-	bool isCreateAccountPageOpen = false;
+	bool isCreateAccountPageOpen = true;
 
 
 	AccountCreatePage() : emailInput{ sf::Vector2f(middleOfPage, 200) }, nameInput{ sf::Vector2f(middleOfPage, 290) }, passwordInput{ sf::Vector2f(middleOfPage, 380) }, 
@@ -50,8 +50,15 @@ public:
 	void onSubmit() {
 			std::string body = std::format("email={}&name={}&password={}", emailInput.inputString, nameInput.inputString, passwordInput.inputString);
 			sf::Http::Response createAccountResult = httpService.post("/Auth", body);
-			std::cout << "success" << std::endl;
-
+			if (createAccountResult.getStatus() == sf::Http::Response::Ok)
+			{
+				// check the contents of the response
+				std::cout << createAccountResult.getBody() << std::endl;
+			}
+			else 
+			{ 
+				std::cout << "fuck me" << std::endl;
+			}
 			std::cout << createAccountResult.getStatus() << std::endl;
 			std::cout << createAccountResult.getBody() << std::endl;
 	}

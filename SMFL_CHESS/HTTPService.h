@@ -8,7 +8,7 @@ class HTTPService
 		sf::Http http;
 
 		HTTPService() {
-			http.setHost("local/");
+			http.setHost("http://127.0.0.1", 5052);
 		}
 
 		sf::Http::Response get(std::string uri) {
@@ -25,7 +25,6 @@ class HTTPService
 			request.setMethod(sf::Http::Request::Post);
 			request.setUri(uri);
 			request.setField("Content-Type", "application/x-www-form-urlencoded");
-
 			sf::Http::Response response = http.sendRequest(request);
 			return response;
 		}
