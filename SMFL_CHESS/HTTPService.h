@@ -24,7 +24,8 @@ class HTTPService
 			sf::Http::Request request;
 			request.setMethod(sf::Http::Request::Post);
 			request.setUri(uri);
-			request.setField("Content-Type", "application/x-www-form-urlencoded");
+			request.setField("Content-Type", "text/json");
+			request.setBody(stream);
 			sf::Http::Response response = http.sendRequest(request);
 			return response;
 		}

@@ -5,6 +5,7 @@
 #include <SFML/Network.hpp>
 #include <format>
 #include "HTTPService.h"
+#include <sstream>
 
 class AccountCreatePage
 {
@@ -49,7 +50,9 @@ public:
 
 	void onSubmit() {
 			std::string body = std::format("email={}&name={}&password={}", emailInput.inputString, nameInput.inputString, passwordInput.inputString);
-			sf::Http::Response createAccountResult = httpService.post("/Auth", body);
+			std::ostringstream stream;
+			stream << "name=" << nameInput.inputString << "&email=" << emailInput.inputString << "&password=" << passwordInput.inputString;
+			sf::Http::Response createAccountResult = httpService.post("/Auth", stream.str());
 			if (createAccountResult.getStatus() == sf::Http::Response::Ok)
 			{
 				// check the contents of the response
