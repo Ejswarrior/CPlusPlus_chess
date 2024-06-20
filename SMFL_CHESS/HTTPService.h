@@ -1,6 +1,11 @@
 #pragma once
 #include <SFML/Network.hpp>
 #include <iostream>
+#include <fstream>
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
+
 class HTTPService
 {
 
@@ -21,10 +26,11 @@ class HTTPService
 		}
 
 		sf::Http::Response post(std::string uri, std::string stream) {
+			json jsonObj;
 			sf::Http::Request request;
 			request.setMethod(sf::Http::Request::Post);
 			request.setUri(uri);
-			request.setField("Content-Type", "text/json");
+			request.setField("Content-Type", "application/json");
 			request.setBody(stream);
 			sf::Http::Response response = http.sendRequest(request);
 			return response;
