@@ -6,6 +6,15 @@
 #include <format>
 #include "HTTPService.h"
 #include <sstream>
+#include <nlohmann/json.hpp>
+
+
+struct CreateAccountValues
+{
+	std::string email;
+	std::string name;
+	std::string password;
+};
 
 class AccountCreatePage
 {

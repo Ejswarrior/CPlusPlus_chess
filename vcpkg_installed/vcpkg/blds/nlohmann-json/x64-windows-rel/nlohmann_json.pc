@@ -1,0 +1,4 @@
+Name: nlohmann_json
+Description: JSON for Modern C++
+Version: 3.11.3
+Cflags: -IC:/Users/Erik/source/repos/SMLF_CHESS/vcpkg_installed/vcpkg/pkgs/nlohmann-json_x64-windows/include
